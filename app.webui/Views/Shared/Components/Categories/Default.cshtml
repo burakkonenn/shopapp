@@ -1,0 +1,9 @@
+@model List<MansCategory>
+
+ @foreach (var item in Model)
+    {
+       <div class="form-check d-flex flex-row">
+            <input class="form-check-input mt-2" type="checkbox" value="" id="" style="width: 20px;" height="50px;">
+            <a asp-controller="Shop" asp-action="ManCategories" asp-route-url="@item.Url" class="nav-link k" style="color:black;">@item.Name</a>
+        </div>
+    } 

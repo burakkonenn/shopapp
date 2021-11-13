@@ -1,0 +1,72 @@
+@model CartModel
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+           <div class="d-flex justify-content-end">
+               <button style="width: 260px; height:50px;" class="btn btn-warning" type="submit"><span class="h">Sepeti Onayla ></span></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card-header border cl">
+                <i class="far fa-user me-2 "></i>
+                <span class="c">Alışverişinizi daha hızlı tamamlamak için <a class="s" href="/account/login">Giriş Yap</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-md-9">
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <span class="c tex-muted">Ürün adı: <a href="" class="c">@item.Name</a></span>
+                    </div>
+                   <div class="row">
+                        <div class="col-md-4 ">
+                                <div class="card-body">
+                                    <input type="checkbox" name="" id="">
+                                    <img src="~/img/@item.Image" width="80" alt="">
+                                    <span class="ms-2 c text-muted">@item.Name XLFJL244</span>
+                                </div>
+                        </div>
+                        <div class="col-md-5  d-flex align-items-center">
+                            <input type="number" class="form-control" style="width: 80px;" step="1" min="1" value="1">
+                        </div>
+                        <div class="col-md-3  d-flex align-items-center">
+                            <span class="c">@item.Price TL</span>
+                            <form action="">
+                                <a href=""><i class="fas fa-trash-alt ms-4 text-muted" style="color: black;"></i></a>
+                            </form>
+                        </div>
+                   </div>
+                  
+                </div>
+            }
+        </div>
+        <div class="col-md-3">
+                <div class="card p-3">
+                    <h1 class="l text-center">Sipariş Özeti</h1>
+                    <div class="card-title">
+                        <span class="g">Ürünün Toplamı @Model.TotalPrice().ToString("c")</span>
+                    </div>
+                    <div class="cart-text">
+                        <span class="g">Kargo toplamı 11.99 TL</span>
+                    </div>
+                    <p class="g text-muted">Kargo ücreti, siparişinizdeki ürünleri kargolayacak satıcı sayısına göre hesaplanmaktadır.</p>
+                </div>
+                <div class="col-md-3 mt-3">
+                   <button style="width: 260px; height:50px;" class="btn btn-warning" type="submit"><span class="h">+  İndirim kodu gir</span></button>
+               </div>
+        </div>
+       
+    </div>
+</div>
+

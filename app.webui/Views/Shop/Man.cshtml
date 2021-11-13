@@ -1,0 +1,69 @@
+@model ProductModel
+
+
+@await Html.PartialAsync("_header")
+@await Html.PartialAsync("_navbar")
+@await Html.PartialAsync("_headerTwo")
+<div class="row">
+    <div class="col-md-2 p-3 mt-4 column border">
+        <h5 class="">İlgili Kategoriler</h5>
+        
+        <hr>
+        <h5>Fırsat Ürünleri</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" style="width: 20px;" height="50px;">
+            <label class="form-check-label ms-2 k" for="">
+                Fırsat Ürünleri
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" style="width: 20px;" height="50px;">
+            <label class="form-check-label ms-2 k" for="flexCheckCheckedDisabled">
+                Büyük Fırsat Ürünleri
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="" style="width: 20px;" height="50px;">
+            <label class="form-check-label ms-2 k" for="">
+                Çılgın Fırsat Ürünleri
+            </label>
+        </div>
+        <hr>
+        <h5 class="mb-3">Kategoriler</h5>
+        <form action="" method="POST">
+            <input id="formin" type="text" class="form-control" style="width: 240px;" placeholder="Marka ara">
+        </form>
+        <div class="mt-2">
+            @await Component.InvokeAsync("Categories")
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="c">"Erkek Ayakkabı" araması için toplam @Model.TotalCount sonuc listeleniyor</span>
+            </div>
+            <div class="col-md-6">
+                <div class="dropdown d-flex justify-content-end">
+                    <a style="color: black;" class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                       Önerilenler
+                    </a>
+
+                    <ul class="dropdown-menu border" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item c" href="/shop/decending">En Yüksek Fiyat</a></li>
+                        <li><a class="dropdown-item c" href="/shop/Acending">En Düşük Fiyat</a></li>
+                        
+                    </ul>
+                </div>                       
+            </div>  
+            <div class="row">
+                        @foreach (var item in Model.Products)
+                        {
+                            <div class="col-md-3 mb-4 ">
+                                @await Html.PartialAsync("_products",item)
+                            </div>
+                        }
+                    </div> 
+        </div>
+    </div>
+</div>
+

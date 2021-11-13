@@ -1,0 +1,76 @@
+@model ProductDetailModel
+
+@await Html.PartialAsync("_header")
+@await Html.PartialAsync("_navbar")
+@await Html.PartialAsync("_headerTwo")
+<div class="row mb-5 d-flex justify-content-center">
+                <div class="col-md-5 border detailsShadow" style="height:650px;">
+                    <img src="~/img/@Model.Product.Image" style="height:650px; width:100%" alt="">
+                </div>
+                <div class="col-md-6 border detailsShadow">
+                        <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.Persons.Name ></a></span> 
+                        <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.MansCategory.Name ></a></span> 
+                        <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.MansBrands.Name > </a></span> 
+                        <p><a href="" style="color:gray;">@Model.totalCommentCount Soru & Cevap</a></p>
+                        <h2 class="card-title mt-4 mb-2">@Model.Product.Name</h2>
+                        <hr>
+                        <h3 class="card-title">@Model.Product.Price TL</h3>
+                        <hr>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-warning" type="submit">Sepete Ekle</button>
+                        </div>
+                        <p class="text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente incidunt mollitia vero commodi, harum, repellendus similique ex corrupti consequuntur quos unde maxime sed magni nam. Suscipit ab nihil qui harum.
+                        A reprehenderit omnis deserunt inventore earum. Tenetur itaque voluptas alias modi perspiciatis numquam consequuntur officia neque illum fugiat consectetur molestiae incidunt iste, cupiditate perferendis, ab molestias dolor saepe minus? Quisquam?
+                        Sed magnam quia reprehenderit ad voluptatem odit ut quae amet similique, enim accusantium libero dolore commodi nostrum iure aliquid dolor unde ipsa. Molestias excepturi facere saepe quod, cupiditate ipsum blanditiis.
+                        Nam dolorum pariatur libero est. Doloribus nemo, optio aut commodi eveniet maiores illum placeat a asperiores quae mollitia blanditiis ea dolorum aspernatur. Harum tenetur eius quo quasi ipsam, repudiandae quas.
+                        A delectus nulla, animi at officiis ipsam, exercitationem et assumenda blanditiis neque doloremque ducimus velit fuga? Quis, incidunt, reprehenderit nemo aliquam omnis quasi ullam illo at quod facere obcaecati porro!</p>
+                </div>    
+</div>
+
+
+<div class="row mt-3 mb-5 d-flex justify-content-center">
+    <div class="col-md-11">
+        <h2 class="mb-4">Ürün Değerlendirmesi</h2>
+        <form action="/shop/comment" method="post" class="border p-4 formStyle">
+            <input type="hidden" name="ProductId" class="form-control" value="@Model.Product.Id">
+            <input type="hidden" name="Date" class="form-control" value="@DateTime.Now">
+            <div class="mb-4">
+                <input type="text" class="form-control mb-2" placeholder="Adınız" name="Name">
+            </div>
+             <div class="mb-4">
+                <input type="email" class="form-control mb-2" placeholder="Email Adresiniz" name="Email">
+            </div>
+            <div class="mb-3">
+                <textarea name="Post" id="" placeholder="Yorumunuz" class="form-control" cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn btn-warning mt-3" type="submit">Gönder</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-11">
+        <div class="d-flex justify-content-center mt-2 mb-2">
+            <h2 class="text-muted">@Model.totalCommentCount Yorum</h2>
+        </div>
+        @foreach (var item in Model.Comments)
+        {
+           <div class="card mb-2">
+               <div class="card-body">
+                    <p class="card-text">@item.Post</p>
+               </div>
+               <div class="card-footer border-0" style="background-color: white;">
+                  <div>
+                     <span class="text-muted">@item.Name</span> |
+                     <span class="text-muted">@item.Date</span>
+                     <div class="float-end like">
+                       <a href="/shop/like/@item.Id" class="like" style="text-decoration:none;"><i class="fas fa-thumbs-up me-2"></i>Yorumu Beğen (@item.Like)</a>
+                   </div>
+                  </div>
+               </div>
+           </div>
+        }
+    </div>
+</div>
+

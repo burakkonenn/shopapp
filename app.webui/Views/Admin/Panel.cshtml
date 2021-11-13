@@ -1,0 +1,84 @@
+@model ProductCountModel
+
+<div class="row mb-5">
+    <div class="col-md-2">
+        <a href="" class="" style="text-decoration: none;"><h2 class="text-center mb-5 mt-3 colr">XX Shop</h2></a>
+        <hr>
+        <ul class="nav flex-column h ">
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" href="/"><i class="me-2 fas fa-home"></i><span class="ms-2">Home Page</span></a>
+            </li>
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
+            </li>
+            <li class="nav-item itemli mb-2" >
+                <a class="nav-link item" asp-controller="Admin" asp-action="Categories"><i class="me-2 fas fa-plus"style="color: orange;"></i><span class="ms-2">Categories</span></a>
+            </li>
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" asp-controller="Admin" asp-action="CreateRole"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+            </li>
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
+            </li>
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" href="#"><i class="me-1 fas fa-dollar-sign" style="color: skyblue;"></i><span class="ms-3">Orders</span></a>
+            </li>
+            <li class="nav-item itemli mb-2">
+                <a class="nav-link item" href="#"><i class="fas fa-cart-arrow-down" style="color: silver;"></i><span class="ms-3">Sales</span></a>
+            </li>
+            
+            
+        </ul>
+
+    </div>
+    <div class="col-md-10 adminPanelColumn">
+        <span style="font-size: 25px; color:white;" class="ms-3 dashBoard">Dashboard</span>
+        <div class="d-flex justify-content-end me-5">
+                <form action="">
+                   <span id="adminSpan" class="input-group-text border-0"><i class="fas fa-search" style="color: orange;"></i></span>
+                   <div class="input-group ms-4" id="">
+                       <input type="text" class="form-control adminInput" placeholder="Search">
+                   </div>
+                </form>
+        </div>
+        <div class="d-flex flex-row justify-content-center rowAdmin">
+            <a asp-controller="Admin" asp-action="Products" style="text-decoration: none;">
+                <div class="p-4 ms-3 columnRound">
+                    <div class="d-flex flex-row">
+                        <h5 class="text-muted">Products</h5>
+                        <i class="mt-1 fas fa-plus ms-auto" style="color: violet;font-size:23px"></i>
+                    </div>
+                    <div class="mt-2">
+                        <h5 style="font-size: 12px;"  class="text-muted">Total Man Products: @Model.ManProductsCount</h5>
+                        <h5 style="font-size: 12px;" class="text-muted">Total Woman Products: @Model.WomanProductsCount</h5>
+                    </div>
+                </div>
+            </a>
+            <a asp-controller="Admin" asp-action="UserList" style="text-decoration: none;">
+                <div class=" p-4 ms-3 columnRound">
+                    <div class="d-flex flex-row">
+                        <h5 class="text-muted">Users</h5>
+                        <i class="me-2 fas fa-users  ms-auto" style="color: thistle;"></i>
+                    </div>
+                    <div class="mt-2">
+                        <h5 style="font-size: 12px;"  class="text-muted">Total Users: @Model.UserCount</h5>
+                    </div>
+                </div>
+            </a>
+           <a href="" style="text-decoration: none;">
+                <div class=" p-4 ms-3 columnRound">
+                    <div class="d-flex flex-row">
+                        <h5 class="text-muted">Orders</h5>
+                        <i class="me-1 fas fa-dollar-sign ms-auto" style="color: skyblue;"></i>
+                    </div>
+                    <div class="mt-2">
+                        <h5 style="font-size: 12px;"  class="text-muted">Total Users: @Model.UserCount</h5>
+                    </div>
+                </div>
+           </a>
+            
+        </div>
+    </div>
+</div>
+
+

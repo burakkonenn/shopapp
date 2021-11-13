@@ -1,0 +1,21 @@
+@model RoleModel
+
+@await Html.PartialAsync("_header")
+@await Html.PartialAsync("_navbar")
+@await Html.PartialAsync("_headerTwo")
+
+
+<div class="row d-flex justify-content-center createColumn">
+    <div class="col-md-6"  style="background-color: white;">
+        <h2 class="text-center mt-1">Yeni Rol Ekle</h2>
+        <a asp-controller="Admin" asp-action="RoleList" class="float-left" style="text-decoration: none;color:black;" ><h2 class="text-center mt-1" style="font-size: 15px;">< Roller Sayfasına Geri Dön</h2></a>
+        <form asp-controller="Admin" asp-action="RoleList" method="POST">
+            <div class="form-group">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control">
+                <span asp-validation-for="Name"></span>
+            </div>
+            <button class="btn btn-outline-primary mt-2" type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>

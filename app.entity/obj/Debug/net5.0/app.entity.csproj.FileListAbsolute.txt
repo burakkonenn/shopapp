@@ -1,0 +1,12 @@
+C:\app\app.entity\bin\Debug\net5.0\app.entity.deps.json
+C:\app\app.entity\bin\Debug\net5.0\app.entity.dll
+C:\app\app.entity\bin\Debug\net5.0\ref\app.entity.dll
+C:\app\app.entity\bin\Debug\net5.0\app.entity.pdb
+C:\app\app.entity\obj\Debug\net5.0\app.entity.csproj.AssemblyReference.cache
+C:\app\app.entity\obj\Debug\net5.0\app.entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\app\app.entity\obj\Debug\net5.0\app.entity.AssemblyInfoInputs.cache
+C:\app\app.entity\obj\Debug\net5.0\app.entity.AssemblyInfo.cs
+C:\app\app.entity\obj\Debug\net5.0\app.entity.csproj.CoreCompileInputs.cache
+C:\app\app.entity\obj\Debug\net5.0\app.entity.dll
+C:\app\app.entity\obj\Debug\net5.0\ref\app.entity.dll
+C:\app\app.entity\obj\Debug\net5.0\app.entity.pdb

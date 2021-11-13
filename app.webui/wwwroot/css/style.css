@@ -1,0 +1,238 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.h{
+    width: 250px;
+  
+
+}
+
+.h{
+    font-size: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.l{
+    font-size: 25px;
+    color: black;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+.g{
+    font-size: 12px;
+    color: black;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+.i{
+    width: 50px;
+}
+.cl{
+    background-color:floralwhite;
+}
+.item{
+    font-size: 15px;
+    color: gray;
+    transition: 1s;
+
+}
+.s{
+    font-family: 'Space Grotesk', sans-serif;
+    color: red;
+}
+.p{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+}
+
+.navhead{
+    font-size: 15px;
+    color: black;
+    font-family: 'Space Grotesk', sans-serif;
+   
+}
+
+.fontSize{
+    color: gray;
+    font-size: 10px;
+
+}
+.k{
+    font-size: 13px;
+}
+
+.h{
+    text-decoration: none;
+}
+#inp{
+    background-color: #ebedf0;
+    border: none;
+}
+.c{
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+#inp::placeholder{
+    font-size: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+#formin::placeholder{
+    font-size: 12px;
+}
+#formin{
+    background-color: #ebedf0;
+}
+#inp:focus{
+    
+    box-shadow: 1px 1px 4px 2px whitesmoke;
+    border: 2px solid orange;
+}
+.n{
+    font-size: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.details
+{
+    box-shadow: 10px 10px 100px rgb(206, 199, 199);
+}
+.formStyle{
+    background-color: white;
+    box-shadow: 10px 20px 20px rgb(220, 215, 215);
+}
+.like{
+    color: gray;
+}
+.like:hover{
+  color: orange;
+}
+.column{
+    position: relative;
+    top: 16px;
+    box-shadow: 1px 3px 5px rgb(206, 196, 196);
+}
+.productStyle{
+    box-shadow: 1px 3px 5px rgb(206, 196, 196);
+}
+.columnList{
+    position: relative;
+    bottom: 23px;
+    box-shadow: 1px 3px 1px rgb(206, 196, 196);
+}
+.detailsShadow{
+    box-shadow: 1px 3px 20px rgb(206, 196, 196);
+
+}
+.registerBack{
+    background-color: rgb(254, 254, 254);
+    width: 350px;
+}
+.logincolumn{
+    width: 400px;
+}
+.footer{
+    position: relative;
+    bottom: 50px;
+}
+.forms{
+    width: 250px;
+}
+.loginİnput{
+    background-color: rgb(249, 247, 247);
+}
+.post{
+    position: relative;
+    right: 5px;
+
+}
+.Regİnp::placeholder{
+    font-size: 10px;
+}
+
+.regBtn{
+    background-color: rgb(15, 15, 206);
+}
+.regBackground{
+    background-color: rgb(233, 233, 240);
+
+}
+.loginback{
+    background-color: rgb(233, 233, 240);
+}
+::-webkit-scrollbar {
+    display: none;
+    visibility: hidden;
+    opacity: 0
+}
+.adminPanelColumn{
+    background-color: rgb(135, 104, 135);
+    height: 440px;
+ 
+}
+.adminAddProduct{
+    background-color: rgb(250, 249, 249);
+}
+.createColumn{
+    background-color: rgb(249, 247, 247);
+}
+.createProductsPage{
+    background-color: white
+}
+.rowAdmin{
+    position: relative;
+    top: 50px;
+}
+.colr{
+    color:rgb(150, 180, 184);
+    font-size: 40px;
+
+}
+.item:hover{
+    background: turquoise;
+}
+.adminInput{
+    border-radius: 40px;
+    background: transparent;
+    position: relative;
+    bottom: 40px;
+
+}
+.adminInput:focus{
+    background: transparent;
+}
+.adminInput::placeholder{
+    font-size: 12px;
+    color: white;
+    position: relative;
+    left: 22px;
+    bottom: 1px;
+}
+.columnRound{
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: white;
+    transition: 0.4s;
+    width: 300px;
+    height: 120px;
+}
+.columnRound:hover
+{
+    background-color: rgb(210, 197, 210);
+
+}
+#adminSpan{
+    background-color: transparent;
+    position: relative;
+    left: 22px;
+    bottom: 6px;
+}
+.dashBoard{
+    position: relative;
+    top: 18px;
+}
+.return{
+
+    height: 40px;
+
+}
