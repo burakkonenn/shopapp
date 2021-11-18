@@ -72,6 +72,8 @@ body{
 .c{
     font-size: 12px;
     font-family: 'Space Grotesk', sans-serif;
+    border-radius: 200px;
+    width: 300px;
 }
 #inp::placeholder{
     font-size: 12px;
@@ -170,6 +172,11 @@ body{
     height: 440px;
  
 }
+.header{
+    background-color: rgb(135, 104, 135);
+    color:white;
+    padding: 50px;
+}
 .adminAddProduct{
     background-color: rgb(250, 249, 249);
 }
@@ -196,7 +203,23 @@ body{
     background: transparent;
     position: relative;
     bottom: 40px;
+    
 
+}
+.Inputs{
+    border-radius: 40px;
+    background: transparent;
+    position: relative;
+    bottom: 70px;
+    color:white;
+}
+.Inputs::placeholder{
+    color: white;
+    position: relative;
+    left: 25px;
+}
+.Inputs:focus{
+    background: transparent;
 }
 .adminInput:focus{
     background: transparent;
@@ -224,8 +247,8 @@ body{
 #adminSpan{
     background-color: transparent;
     position: relative;
-    left: 22px;
-    bottom: 6px;
+    left: 25px;
+    bottom: 36px;
 }
 .dashBoard{
     position: relative;
@@ -235,4 +258,143 @@ body{
 
     height: 40px;
 
+}
+.forms{
+    width: 900px;
+    position: relative;
+    bottom: 20px;
+}
+.forms1{
+    width: 1000px;
+    height: 400px;
+    position: relative;
+    bottom: 800px;
+    padding: 40px;
+}
+.showProductsform{
+    background-color: rgb(247, 246, 247);
+    position: relative;
+    bottom: 16px;
+   
+}
+.showProductsform1{
+    position: relative;
+    background-color: rgb(231, 220, 231);
+    bottom: 160px;
+    height: 395px;
+}
+.hide{
+    border-radius: 100px;
+    box-shadow: 10px 5px 10px rgb(179, 177, 173);
+    margin: 12px;
+    transition: 0.7s;
+    
+}
+.hide:hover{
+    background-color: rgb(250, 239, 239);
+    border: none;
+
+}
+.bxShadow{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    
+}
+.bxShado{
+    position: relative;
+    border-radius: 200px;
+    width: 22 0px;
+    left: 130px;
+}
+.bxShadow0{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    bottom: 40px;
+    right: 45px;
+}
+.bxShadow1{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    top: 5px;
+    left: 75px;
+}
+.bxShadow2{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    left: 190px;
+    bottom: 40px;
+}
+.bxShadow{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    left: 1px;
+    top: 2px;
+}
+.mans{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    color: black;
+    width: 300px;
+    border-radius: 200px;
+    position: relative;
+    left: 90px;
+}
+.bxShadow5{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    bottom: 40px;
+    right: 45px;
+}
+.icons{
+    position: relative;
+    top: 6px;
+}
+.text{
+    line-height: 0fr;
+}
+.stylesRow{
+    position: relative;
+    bottom: 60px;
+    width: 600px;
+    background-color: rgb(250, 230, 193);
+}
+.header1{
+    background-color: rgb(135, 104, 135);
+}
+.brands{
+    position: relative;
+    width: 700px;
+}
+.tables{
+    position: relative;
+    top: 25px;
+   
+}
+.cate{
+    position: relative;
+    top: 40px;
+}
+.hr{
+    position: relative;
+    top: 25px;
+}
+.divs{
+    position: relative;
+    bottom: 43px;
+    right: 15px;
+}
+.mainDiv{
+  position: relative;
+  top: 300px;
+}
+.btnUser{
+    border-radius: 100px;
+    width: 200px;
 }

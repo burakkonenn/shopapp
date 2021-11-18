@@ -1,0 +1,35 @@
+@model UserModelManage
+
+@await Html.PartialAsync("_header")
+@await Html.PartialAsync("_headerTwo")
+@await Html.PartialAsync("_navbar")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+           <div class="card">
+               <div class="card-header">
+                   <h2 style="font-size:17px;">Kullancı Bilgileri</h2>
+               </div>
+               <div class="card-body p-3">
+                   <ul class="list-group list-group-flush">
+                       <li class="list-group-item"><h5 class="" style="font-size: 14px;">Kullancı Adı: @Model.Username</h5></li>
+                       <li class="list-group-item"><h5 style="font-size: 14px;">Adı: @Model.Firstname</h5></li>
+                       <li class="list-group-item"><h5 style="font-size: 14px;">Soyadı: @Model.Firstname</h5></li>
+                       <li class="list-group-item"><h5 style="font-size: 14px;">E-Posta: @Model.Email</h5></li>
+                       <li class="list-group-item"><h5 style="font-size: 14px;">E-Posta Onaylandı mı?: 
+                           @if(@Model.IsEmailConfirm)
+                           {
+                                <i class="fas fa-check-circle"></i>
+                           }else{
+                               <i class="fas fa-times-circle"></i>
+                           }
+                       </h5></li>
+                       <li class="list-group-item"><h5 style="font-size: 14px;">Cep Telefonu: @Model.PhoneNumber</h5></li>
+                   </ul>
+               </div>
+           </div>
+            <a href="" class="btn btn-warning btnUser mt-2">Bilgileri Düzenle</a>
+        </div>
+    </div>
+</div>

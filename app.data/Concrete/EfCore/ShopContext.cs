@@ -6,16 +6,13 @@ namespace app.data.Concrete.EfCore
 {
     public class ShopContext:DbContext
     {
-        public DbSet<Persons> Person { get; set; }
-
-
+        public DbSet<Genders> Genders { get; set; }
         public DbSet<ManProduct> ManProducts { get; set; }
         public DbSet<MansCategory> MansCategories { get; set; }
         public DbSet<MansBrands> MansBrands { get; set; }
         public DbSet<ManProductBody> ManProductBodies { get; set; }
         
         
-        public DbSet<Womans> Womans { get; set; }
         public DbSet<WomanProduct> WomanProducts { get; set; }
         public DbSet<WomansCategory> WomansCategories { get; set; }
         public DbSet<WomansBrands> WomansBrands { get; set; }

@@ -15636,18 +15636,13 @@
   "RootNamespace": "app.webui",
   "Documents": [
     {
-      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateProduct.cshtml",
-      "TargetPath": "Views\\Admin\\CreateProduct.cshtml",
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\ManProducts.cshtml",
+      "TargetPath": "Views\\Admin\\ManProducts.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\app\\app.webui\\Views\\Cart\\Index.cshtml",
       "TargetPath": "Views\\Cart\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\Categorylist.cshtml",
-      "TargetPath": "Views\\Admin\\Categorylist.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15691,8 +15686,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\MansBrandsEdit.cshtml",
+      "TargetPath": "Views\\Admin\\MansBrandsEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\app\\app.webui\\Views\\Shop\\Details.cshtml",
       "TargetPath": "Views\\Shop\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateWomanBrands.cshtml",
+      "TargetPath": "Views\\Admin\\CreateWomanBrands.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomansBrandsEdit.cshtml",
+      "TargetPath": "Views\\Admin\\WomansBrandsEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15708,6 +15718,11 @@
     {
       "FilePath": "c:\\app\\app.webui\\Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomanProductEdit.cshtml",
+      "TargetPath": "Views\\Admin\\WomanProductEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15751,8 +15766,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CategoryEdit.cshtml",
-      "TargetPath": "Views\\Admin\\CategoryEdit.cshtml",
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\ManCategoriesEdit.cshtml",
+      "TargetPath": "Views\\Admin\\ManCategoriesEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15761,8 +15776,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\ManCategoryList.cshtml",
+      "TargetPath": "Views\\Admin\\ManCategoryList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateWomanCategory.cshtml",
+      "TargetPath": "Views\\Admin\\CreateWomanCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Account\\Manage.cshtml",
+      "TargetPath": "Views\\Account\\Manage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\app\\app.webui\\Views\\Admin\\UserList.cshtml",
       "TargetPath": "Views\\Admin\\UserList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\ManProductsEdit.cshtml",
+      "TargetPath": "Views\\Admin\\ManProductsEdit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15771,13 +15806,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\RoleList.cshtml",
-      "TargetPath": "Views\\Admin\\RoleList.cshtml",
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateManProduct.cshtml",
+      "TargetPath": "Views\\Admin\\CreateManProduct.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CategoryCreate.cshtml",
-      "TargetPath": "Views\\Admin\\CategoryCreate.cshtml",
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\RoleList.cshtml",
+      "TargetPath": "Views\\Admin\\RoleList.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15786,8 +15821,38 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\ManProductsBrands.cshtml",
+      "TargetPath": "Views\\Admin\\ManProductsBrands.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomanCategoryEdit.cshtml",
+      "TargetPath": "Views\\Admin\\WomanCategoryEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomanProductsBrands.cshtml",
+      "TargetPath": "Views\\Admin\\WomanProductsBrands.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomanProducts.cshtml",
+      "TargetPath": "Views\\Admin\\WomanProducts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\app\\app.webui\\Views\\Shop\\ManBrandDetails.cshtml",
       "TargetPath": "Views\\Shop\\ManBrandDetails.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateWomanProducts.cshtml",
+      "TargetPath": "Views\\Admin\\CreateWomanProducts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\WomanCategoryList.cshtml",
+      "TargetPath": "Views\\Admin\\WomanCategoryList.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15798,6 +15863,16 @@
     {
       "FilePath": "c:\\app\\app.webui\\Views\\Admin\\UserEdit.cshtml",
       "TargetPath": "Views\\Admin\\UserEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateManBrands.cshtml",
+      "TargetPath": "Views\\Admin\\CreateManBrands.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\app\\app.webui\\Views\\Admin\\CreateManCategory.cshtml",
+      "TargetPath": "Views\\Admin\\CreateManCategory.cshtml",
       "FileKind": "mvc"
     },
     {

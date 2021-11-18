@@ -115,6 +115,23 @@ namespace app.data.Migrations
                     b.ToTable("Comment");
                 });
 
+            modelBuilder.Entity("app.entity.Genders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genders");
+                });
+
             modelBuilder.Entity("app.entity.ManProduct", b =>
                 {
                     b.Property<int>("Id")
@@ -123,6 +140,9 @@ namespace app.data.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Image")
                         .HasColumnType("TEXT");
@@ -133,17 +153,14 @@ namespace app.data.Migrations
                     b.Property<bool>("IsHome")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MansBrandsId")
+                    b.Property<int>("MansBrandsId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MansCategoryId")
+                    b.Property<int>("MansCategoryId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("PersonsId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
@@ -153,11 +170,11 @@ namespace app.data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("GendersId");
+
                     b.HasIndex("MansBrandsId");
 
                     b.HasIndex("MansCategoryId");
-
-                    b.HasIndex("PersonsId");
 
                     b.ToTable("ManProducts");
                 });
@@ -183,23 +200,23 @@ namespace app.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MansCategoryId")
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("MansCategoryId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("PersonsId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MansCategoryId");
+                    b.HasIndex("GendersId");
 
-                    b.HasIndex("PersonsId");
+                    b.HasIndex("MansCategoryId");
 
                     b.ToTable("MansBrands");
                 });
@@ -210,37 +227,20 @@ namespace app.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("PersonsId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonsId");
+                    b.HasIndex("GendersId");
 
                     b.ToTable("MansCategories");
-                });
-
-            modelBuilder.Entity("app.entity.Persons", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Person");
                 });
 
             modelBuilder.Entity("app.entity.WomanProduct", b =>
@@ -251,6 +251,9 @@ namespace app.data.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Image")
                         .HasColumnType("TEXT");
@@ -264,33 +267,25 @@ namespace app.data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PersonsId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("WomansBrandIdId")
+                    b.Property<int>("WomansBrandsId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("WomansCategoryId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("WomansId")
+                    b.Property<int>("WomansCategoryId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonsId");
+                    b.HasIndex("GendersId");
 
-                    b.HasIndex("WomansBrandIdId");
+                    b.HasIndex("WomansBrandsId");
 
                     b.HasIndex("WomansCategoryId");
-
-                    b.HasIndex("WomansId");
 
                     b.ToTable("WomanProducts");
                 });
@@ -310,34 +305,17 @@ namespace app.data.Migrations
                     b.ToTable("WomanProductBodies");
                 });
 
-            modelBuilder.Entity("app.entity.Womans", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Womans");
-                });
-
             modelBuilder.Entity("app.entity.WomansBrands", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("PersonsId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
@@ -345,16 +323,11 @@ namespace app.data.Migrations
                     b.Property<int?>("WomansCategoryId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("WomansId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonsId");
+                    b.HasIndex("GendersId");
 
                     b.HasIndex("WomansCategoryId");
-
-                    b.HasIndex("WomansId");
 
                     b.ToTable("WomansBrands");
                 });
@@ -365,23 +338,18 @@ namespace app.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("GendersId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("PersonsId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("WomansId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("PersonsId");
-
-                    b.HasIndex("WomansId");
+                    b.HasIndex("GendersId");
 
                     b.ToTable("WomansCategories");
                 });
@@ -430,23 +398,29 @@ namespace app.data.Migrations
 
             modelBuilder.Entity("app.entity.ManProduct", b =>
                 {
+                    b.HasOne("app.entity.Genders", "Genders")
+                        .WithMany("ManProducts")
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("app.entity.MansBrands", "MansBrands")
                         .WithMany("ManProduct")
-                        .HasForeignKey("MansBrandsId");
+                        .HasForeignKey("MansBrandsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("app.entity.MansCategory", "MansCategory")
                         .WithMany("ManProducts")
-                        .HasForeignKey("MansCategoryId");
+                        .HasForeignKey("MansCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("app.entity.Persons", "Persons")
-                        .WithMany("ManProducts")
-                        .HasForeignKey("PersonsId");
+                    b.Navigation("Genders");
 
                     b.Navigation("MansBrands");
 
                     b.Navigation("MansCategory");
-
-                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("app.entity.ManProductBody", b =>
@@ -470,51 +444,57 @@ namespace app.data.Migrations
 
             modelBuilder.Entity("app.entity.MansBrands", b =>
                 {
-                    b.HasOne("app.entity.MansCategory", "MansCategory")
+                    b.HasOne("app.entity.Genders", "Genders")
                         .WithMany("MansBrands")
-                        .HasForeignKey("MansCategoryId");
-
-                    b.HasOne("app.entity.Persons", "Persons")
-                        .WithMany("MansBrands")
-                        .HasForeignKey("PersonsId")
+                        .HasForeignKey("GendersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("MansCategory");
+                    b.HasOne("app.entity.MansCategory", "MansCategory")
+                        .WithMany("MansBrands")
+                        .HasForeignKey("MansCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Persons");
+                    b.Navigation("Genders");
+
+                    b.Navigation("MansCategory");
                 });
 
             modelBuilder.Entity("app.entity.MansCategory", b =>
                 {
-                    b.HasOne("app.entity.Persons", "Persons")
+                    b.HasOne("app.entity.Genders", "Genders")
                         .WithMany("ManCategory")
-                        .HasForeignKey("PersonsId");
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Persons");
+                    b.Navigation("Genders");
                 });
 
             modelBuilder.Entity("app.entity.WomanProduct", b =>
                 {
-                    b.HasOne("app.entity.Persons", null)
+                    b.HasOne("app.entity.Genders", "Genders")
                         .WithMany("WomanProducts")
-                        .HasForeignKey("PersonsId");
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("app.entity.WomansBrands", "WomansBrandId")
+                    b.HasOne("app.entity.WomansBrands", "WomansBrand")
                         .WithMany("WomanProducts")
-                        .HasForeignKey("WomansBrandIdId");
+                        .HasForeignKey("WomansBrandsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("app.entity.WomansCategory", "WomansCategory")
                         .WithMany("WomanProducts")
-                        .HasForeignKey("WomansCategoryId");
+                        .HasForeignKey("WomansCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("app.entity.Womans", "Womans")
-                        .WithMany("WomanProducts")
-                        .HasForeignKey("WomansId");
+                    b.Navigation("Genders");
 
-                    b.Navigation("Womans");
-
-                    b.Navigation("WomansBrandId");
+                    b.Navigation("WomansBrand");
 
                     b.Navigation("WomansCategory");
                 });
@@ -540,36 +520,30 @@ namespace app.data.Migrations
 
             modelBuilder.Entity("app.entity.WomansBrands", b =>
                 {
-                    b.HasOne("app.entity.Persons", null)
+                    b.HasOne("app.entity.Genders", "Genders")
                         .WithMany("WomansBrands")
-                        .HasForeignKey("PersonsId");
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("app.entity.WomansCategory", "WomansCategory")
                         .WithMany("WomansBrands")
                         .HasForeignKey("WomansCategoryId");
 
-                    b.HasOne("app.entity.Womans", "Womans")
-                        .WithMany("WomansBrands")
-                        .HasForeignKey("WomansId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Womans");
+                    b.Navigation("Genders");
 
                     b.Navigation("WomansCategory");
                 });
 
             modelBuilder.Entity("app.entity.WomansCategory", b =>
                 {
-                    b.HasOne("app.entity.Persons", null)
+                    b.HasOne("app.entity.Genders", "Genders")
                         .WithMany("WomansCategories")
-                        .HasForeignKey("PersonsId");
+                        .HasForeignKey("GendersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("app.entity.Womans", "Womans")
-                        .WithMany("WomansCategory")
-                        .HasForeignKey("WomansId");
-
-                    b.Navigation("Womans");
+                    b.Navigation("Genders");
                 });
 
             modelBuilder.Entity("app.entity.Body", b =>
@@ -582,6 +556,21 @@ namespace app.data.Migrations
             modelBuilder.Entity("app.entity.Cart", b =>
                 {
                     b.Navigation("CartItems");
+                });
+
+            modelBuilder.Entity("app.entity.Genders", b =>
+                {
+                    b.Navigation("ManCategory");
+
+                    b.Navigation("ManProducts");
+
+                    b.Navigation("MansBrands");
+
+                    b.Navigation("WomanProducts");
+
+                    b.Navigation("WomansBrands");
+
+                    b.Navigation("WomansCategories");
                 });
 
             modelBuilder.Entity("app.entity.ManProduct", b =>
@@ -603,35 +592,11 @@ namespace app.data.Migrations
                     b.Navigation("MansBrands");
                 });
 
-            modelBuilder.Entity("app.entity.Persons", b =>
-                {
-                    b.Navigation("ManCategory");
-
-                    b.Navigation("ManProducts");
-
-                    b.Navigation("MansBrands");
-
-                    b.Navigation("WomanProducts");
-
-                    b.Navigation("WomansBrands");
-
-                    b.Navigation("WomansCategories");
-                });
-
             modelBuilder.Entity("app.entity.WomanProduct", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("WomanProductBodies");
-                });
-
-            modelBuilder.Entity("app.entity.Womans", b =>
-                {
-                    b.Navigation("WomanProducts");
-
-                    b.Navigation("WomansBrands");
-
-                    b.Navigation("WomansCategory");
                 });
 
             modelBuilder.Entity("app.entity.WomansBrands", b =>

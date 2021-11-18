@@ -6,6 +6,9 @@ namespace app.webui.Models
 {
     public class CreateProduct
     {
+        public int Id { get; set; }
+        
+        
         public List<MansCategory> SelectedCategory { get; set; }
         
         
@@ -27,12 +30,16 @@ namespace app.webui.Models
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Brands { get; set; }
+        public int MansBrandsId { get; set; }
         [Required]
-        public string Category { get; set; }
+        public int MansCategoryId { get; set; }
         [Required]
-        public string Gender { get; set; }
-        
+        public int GendersId { get; set; }
+        [Required]
+        public int WomansBrandsId { get; set; }
+        [Required]
+        public int WomansCategoryId { get; set; }
+  
         
         
         

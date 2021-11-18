@@ -15,3 +15,4 @@ C:\app\app.data\obj\Debug\net5.0\app.data.dll
 C:\app\app.data\obj\Debug\net5.0\ref\app.data.dll
 C:\app\app.data\obj\Debug\net5.0\app.data.pdb
 C:\app\app.data\obj\Debug\net5.0\app.data.genruntimeconfig.cache
+C:\app\app.data\obj\Debug\net5.0\app.data.csproj.CopyComplete

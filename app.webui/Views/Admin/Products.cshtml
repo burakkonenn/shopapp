@@ -1,47 +1,65 @@
 @model ProductModel
-@await Html.PartialAsync("_header")
-@await Html.PartialAsync("_navbar")
-@await Html.PartialAsync("_headerTwo")
 
-<div class="row d-flex justify-content-center createColumn">
-    <div class="col-md-9" style="background-color: white;">
-        <h2 class="mt-4 mb-2 text-center">Ürünler Listesi</h2>
-        <a asp-controller="Admin" asp-action="CreateProduct" style="color: gray;">
-            <h5 class="mt-3" style="font-size: 16px;">Yeni ürün ekle +</h5>
-        </a>
-        <a asp-controller="Admin" asp-action="Panel" style="color: black;text-decoration: none;">
-                     <h5 class="mt-3" style="font-size: 14px;">< Admin Panel</h5>
-        </a>
-        <hr>
-        <table class="table table-hover table table-striped table table-bordered">
-            <thead class="bg-dark text-dark">
-                <tr>
-                    <td>Id</td>
-                    <td>Name</td>
-                    <td>Price</td>
-                    <td>Image</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Products)
-                {
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                        <td><img src="~/img/@item.Image" width="80" alt=""></td>
-                        <td>
-                                    <a href="/admin/products/@item.Id" class="btn btn-info ms-1 float-end">Düzenle</a>
-                                    
-                                    <form action="/admin/deleteproduct" method="POST" style="display: inline;">
-                                        <input type="hidden" name="productId" value="@item.Id">
-                                        <button type="submit" class="btn btn-secondary float-end">Sil</button>
-                                    </form>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+
+<div class="row d-flex justify-content-center mainDiv" style="height: 300px;">
+        <div class="col-md-3 border d-flex align-items-center justify-content-center columnMan" style="height: 200px;">
+            <a href="" style="color:black;"><h2>ERKEK</h2></a>
+        </div>
+        <div class="col-md-3 border d-flex align-items-center justify-content-center columnWoman" style="height: 200px;">
+            <a href="" style="color:black;"><h2>KADIN</h2></a>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center">
+            
+                            <a asp-controller="Admin" asp-action="ManProducts" style="text-decoration: none; color:black; display:none" class="hideClass">
+                                <div class="col-md-3 hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Erkek Ürünleri</h2>
+                                </div>
+                            </a>
+                            <a asp-controller="Admin" asp-action="ManCategoryList" style="text-decoration: none; color:black; display:none"  class="hideClass">
+                                <div class="col-md-3  hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Erkek Kategorileri</h2>
+                                </div>
+                            </a>
+                            <a asp-controller="Admin" asp-action="ManProductsBrands" style="text-decoration: none; color:black; display:none"  class="hideClass">
+                                <div class="col-md-3  hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Erkek Markaları</h2>
+                                </div>
+                            </a>
+            
+                            <a asp-controller="Admin" asp-action="WomanProducts" style="text-decoration: none; color:black; display:none" class="hideClass1">
+                                <div class="col-md-3  hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Kadın Ürünleri</h2>
+                                </div>
+                            </a>
+                            <a asp-controller="Admin" asp-action="WomanCategoryList" style="text-decoration: none; color:black; display:none"  class="hideClass1">
+                                <div class="col-md-3  hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Kadın Kategorileri</h2>
+                                </div>
+                            </a>
+                            <a asp-controller="Admin" asp-action="WomanProductsBrands" style="text-decoration: none; color:black; display:none"  class="hideClass1">
+                                <div class="col-md-3  hide d-flex align-items-center justify-content-center" style="width: 160px; height:70px;">
+                                    <h2 class="mt-1" style="font-size: 16px;">Kadın Markaları</h2>
+                                </div>
+                            </a>
+            </div>
+        </div>
 </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+        $(".columnMan").click(function(){
+            $(".hideClass").slideToggle();
+        });
+    });
+     $(document).ready(function(){
+        $(".columnWoman").click(function(){
+            $(".hideClass1").slideToggle();
+        });
+    });
+</script>

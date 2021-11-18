@@ -11,11 +11,8 @@
             <li class="nav-item itemli mb-2">
                 <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
             </li>
-            <li class="nav-item itemli mb-2" >
-                <a class="nav-link item" asp-controller="Admin" asp-action="Categories"><i class="me-2 fas fa-plus"style="color: orange;"></i><span class="ms-2">Categories</span></a>
-            </li>
             <li class="nav-item itemli mb-2">
-                <a class="nav-link item" asp-controller="Admin" asp-action="CreateRole"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+                <a class="nav-link item" asp-controller="Admin" asp-action="RoleList"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
             </li>
             <li class="nav-item itemli mb-2">
                 <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
@@ -73,6 +70,17 @@
                     </div>
                     <div class="mt-2">
                         <h5 style="font-size: 12px;"  class="text-muted">Total Users: @Model.UserCount</h5>
+                    </div>
+                </div>
+           </a>
+           <a href="" style="text-decoration: none;">
+                <div class=" p-4 ms-3 columnRound">
+                    <div class="d-flex flex-row">
+                        <h5 class="text-muted">Comments</h5>
+                        <i class="me-1 fas fa-dollar-sign ms-auto" style="color: skyblue;"></i>
+                    </div>
+                    <div class="mt-2">
+                        <h5 style="font-size: 12px;"  class="text-muted">Total Product Comments: @Model.CommentCount</h5>
                     </div>
                 </div>
            </a>

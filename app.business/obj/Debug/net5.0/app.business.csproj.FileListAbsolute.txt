@@ -14,3 +14,4 @@ C:\app\app.business\obj\Debug\net5.0\app.business.csproj.CoreCompileInputs.cache
 C:\app\app.business\obj\Debug\net5.0\app.business.dll
 C:\app\app.business\obj\Debug\net5.0\ref\app.business.dll
 C:\app\app.business\obj\Debug\net5.0\app.business.pdb
+C:\app\app.business\obj\Debug\net5.0\app.business.csproj.CopyComplete

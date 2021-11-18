@@ -30,9 +30,8 @@ namespace app.webui.Controllers
         {
             var model = new ProductModel()
             {
-                Products = _productService.GetAll(),
                 TotalCount = _productService.GetBrandTotalCount(),
-                Pro = _productService.GetProductByDecending()
+                Products = _productService.GetProductByDecending()
 
             };
 
@@ -128,11 +127,8 @@ namespace app.webui.Controllers
 
         public IActionResult Decending()
         {
-            var model = new ProductModel()
-            {
-                Products = _productService.GetProductByDecending(),
-            };
-            return View(model);
+            
+            return View();
         }
         public IActionResult Acending()
         {

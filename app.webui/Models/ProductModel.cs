@@ -8,8 +8,11 @@ namespace app.webui.Models
         public List<ManProduct> Products { get; set; }
         public int TotalCount { get; set; }
         public List<ManProduct> Pro { get; set; }
+        public List<ManProduct> AllProducts { get; set; }
+        public List<WomanProduct> WomanProducts { get; set; }
         
         
+               
         
     }
 }

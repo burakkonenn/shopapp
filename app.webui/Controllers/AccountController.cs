@@ -16,12 +16,14 @@ namespace app.webui.Controllers
         private IEmailSender _emailSender;
         private SignInManager<User> _signInManager;
         private ICartService _cartService;
-        public AccountController(UserManager<User> userManager, IEmailSender emailSender, SignInManager<User> signInManager, ICartService cartService)
+        private RoleManager<IdentityRole> _roleManager;
+        public AccountController(UserManager<User> userManager, IEmailSender emailSender, SignInManager<User> signInManager, ICartService cartService, RoleManager<IdentityRole> roleManager)
         {
             this._userManager = userManager;
             this._emailSender = emailSender;
             this._signInManager = signInManager;
             this._cartService = cartService;
+            this._roleManager = roleManager;
         }
          public void CreateMessage(string errormessage, string type)
         {
@@ -51,7 +53,7 @@ namespace app.webui.Controllers
             }
 
             // var user = await _userManager.FindByNameAsync(model.UserName);
-            var user = await _userManager.FindByEmailAsync(model.Sifre);
+            var user = await _userManager.FindByEmailAsync(model.Eposta);
 
             if(user==null)
             {
@@ -213,6 +215,24 @@ namespace app.webui.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index","Home");
+        }
+        public async Task<IActionResult> Manage(string name)
+        {
+            var user = await _userManager.FindByNameAsync(name);
+            if(user == null)
+            {
+               return NotFound();
+            
+            }    
+                var model = new UserModelManage()
+                {
+                    Username = user.UserName,
+                    Firstname = user.Firstname,
+                    Lastname = user.Lastname,
+                    Email = user.Email,
+                    IsEmailConfirm = user.EmailConfirmed
+                };
+                return View(model);
         }
    
    

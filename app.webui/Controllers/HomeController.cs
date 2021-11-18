@@ -3,6 +3,8 @@ using app.business.Abstract;
 using app.webui.Models;
 using Microsoft.AspNetCore.Mvc;
 using app.entity;
+using app.data.Concrete.EfCore;
+
 namespace app.webui.Controllers
 {
     public class HomeController:Controller
@@ -15,6 +17,7 @@ namespace app.webui.Controllers
 
         public IActionResult Index()
         {
+            var context = new ShopContext();
             var model = new ProductModel()
             {
                 Products = _productService.GetAll()

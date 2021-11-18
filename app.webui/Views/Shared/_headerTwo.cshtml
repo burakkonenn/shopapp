@@ -15,7 +15,7 @@
 
                 @if(User.Identity.IsAuthenticated)
                 {
-                    <a asp-controller="account"asp-action="Login" class="nav-link fontSize ms-3"><i class="far fa-user me-2 "></i>@User.Identity.Name</a> 
+                    <a asp-controller="account"asp-action="Manage" asp-route-Name="@User.Identity.Name" class="nav-link fontSize ms-3"><i class="far fa-user me-2 "></i>@User.Identity.Name</a> 
                     <a asp-controller="account" asp-action="Logout" class="nav-link fontSize">Çıkış Yap</a>
                     <a asp-controller="Cart" asp-action="Index" class="nav-link fontSize"><i class="fas fa-shopping-cart me-2 "></i>Sepetim</a>
                     <a href="" class="nav-link fontSize"><i class="far fa-heart me-2 "></i>Favorilerim</a>

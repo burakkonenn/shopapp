@@ -10,10 +10,10 @@ namespace app.entity
         public int Id { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
-        public int WomansId { get; set; }
-        public Womans Womans { get; set; }
+        public int WomansCategoryId { get; set; }
         public WomansCategory WomansCategory { get; set; }
         public List<WomanProduct> WomanProducts { get; set; }
-        
+        public int GendersId { get; set; }
+        public Genders Genders { get; set; }
     }
 }

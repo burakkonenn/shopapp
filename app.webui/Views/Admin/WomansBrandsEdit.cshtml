@@ -1,0 +1,163 @@
+@model CreateWomanBrandsModel
+
+<div class="row header">
+    <div class="d-flex justify-content-between">
+                <div class="col-md-2 d-flex flex-column divs">
+                    <a asp-controller="Admin" asp-action="Products"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-angle-double-left"></i>Ürünler Sayfasına Geri Dön</h5>
+               
+                    </a>
+                    <a asp-controller="Admin" asp-action="CreateManCategory" style="color: black; text-decoration:none;" class="btn btn-light bxShadow border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-plus"></i>Yeni Kategori Ekle</h5>
+                    </a>
+               </div>
+                <div class="col-md-3">
+                   <h2 class="text-center">Erkek Kategori Düzenleme Sayfası</h2>
+                </div>
+                <div class="col-md-3">
+                            <form action="">
+                                        <span id="adminSpan" class="input-group-text border-0"><i class="fas fa-search" style="color: orange;"></i></span>
+                                        <div class="input-group ms-4" id="">
+                                            <input type="text" class="form-control Inputs" placeholder="Search">
+                                        </div>
+                            </form>
+                </div>
+    </div>
+</div>
+<div class="row">
+    @if(Model.WomanProducts.Count>0)
+    {
+
+        <div class="col-3 header">
+            <form asp-controller="Admin" asp-action="MansBrandsEdit" method="POST">
+                                <input type="hidden" name="Id" value="@Model.Id" id="">
+                                    <h2 class="text-center mb-4">Marka Düzenle</h2>
+                                    <hr>
+                                    @* <a asp-controller="Admin" asp-action="Products" class="float-left" style="text-decoration: none;color:black;" ><h2 class="text-center mt-1" style="font-size: 15px;">< Ürünler Sayfasına Geri Dön</h2></a>
+                                    <a asp-controller="Admin" asp-action="Panel" class="text-center" style="color: black;text-decoration: none;"></a>  *@
+                                    <div class="row">
+                                        <label asp-for="Name" class="col-sm-2 col-form-label"> <h5 style="font-size: 17px;">Marka Adı</h5> </label>
+                                        <div class="col-sm-10">
+                                            <input asp-for="Name" class="form-control">
+                                            <span asp-validation-for="Name"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label asp-for="WomansCategoryId" class="col-sm-2 col-form-label"><h5 style="font-size: 17px;">Kategori</h5></label>
+                                        <div class="col-sm-10">
+                                            <select asp-for="WomansCategoryId" asp-items="@ViewBag.Category" class="form-select" id="">
+                                                <option selected>Tür Seçiniz</option>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label asp-for="GendersId" class="col-sm-2 col-form-label"><h5 style="font-size: 17px;">Tür</h5></label>
+                                        <div class="col-sm-10">
+                                            <select asp-for="GendersId" asp-items="@ViewBag.Genders" class="form-select" id="">
+                                                <option selected>Tür Seçiniz</option>
+                                            </select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <label asp-for="Url" class="col-sm-2 col-form-label"><h5 style="font-size: 17px;">Kategori Url Adresi</h5></label>
+                                        <div class="col-sm-10">
+                                            <input asp-for="Url" class="form-control" >
+                                            <span asp-validation-for="Url"></span>
+                                        </div>
+                                    </div>
+                                <div id="products">
+
+                                    @for (int i = 0; i < Model.WomanProducts.Count; i++)
+                                    {
+                                        <input type="hidden" name="WomanProducts[@i].Id" value="@Model.WomanProducts[@i].Id">
+                                        <input type="hidden" name="WomanProducts[@i].Image" value="@Model.WomanProducts[@i].Image">
+                                        <input type="hidden" name="WomanProducts[@i].Name" value="@Model.WomanProducts[@i].Name">
+                                        <input type="hidden" name="WomanProducts[@i].Price" value="@Model.WomanProducts[@i].Price">
+                                        <input type="hidden" name="WomanProducts[@i].Url" value="@Model.WomanProducts[@i].Url">
+                                        <input type="hidden" name="WomanProducts[@i].Description" value="@Model.WomanProducts[@i].Description">
+                                        <input type="hidden" name="WomanProducts[@i].IsApproved" value="@Model.WomanProducts[@i].IsApproved.ToString()">     
+                                        <input type="hidden" name="WomanProducts[@i].IsHome" value="@Model.WomanProducts[@i].IsHome.ToString()">     
+                                        <input type="hidden" name="WomanProducts[@i].Genders.Name" value="@Model.WomanProducts[@i].Genders.Name">      
+                                        <input type="hidden" name="WomanProducts[@i].WomansCategory.Name" value="@Model.WomanProducts[@i].WomansCategory.Name">                        
+                                    }
+
+                                </div>     
+                                <button class="btn btn-warning" type="submit">Kaydet</button>    
+                </form>                             
+        </div>
+        <div class="col-md-9">
+            <h2 class="text-center mb-5 cate">Markaya Ait Ürünler</h2>
+            <hr class="mt-4 hr">
+                <table class="table table-bordered table table-striped table table-hover tables">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <td>Id</td>
+                            <td>Ürün Adı</td>
+                            <td>Ürün Fiyatı</td>
+                            <td>Ürün Kategorisi</td>
+                            <td>Ürün Markası</td>
+                            <td>Ürün Açıklaması</td> 
+                            <td>Onaylı</td>
+                            <td>Ana sayfa</td>
+                            <td>Tür</td>
+                            <td>Ürün Fotoğrafı</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.WomanProducts)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.WomansCategory.Name</td>
+                                <td>@item.WomansBrand.Name</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    @if(item.IsApproved)
+                                    {
+                                        <i class="fas fa-check-circle"></i>
+                                    }
+                                    else{
+                                        <i class="fas fa-times-circle"></i>
+                                    }
+                                </td>
+                                <td>
+                                    @if(item.IsHome)
+                                    {
+                                        <i class="fas fa-check-circle"></i>
+                                    }
+                                    else{
+                                        <i class="fas fa-times-circle"></i>
+                                    }
+                                </td>
+                                <td>@item.Genders.Name</td>
+                                <td><img src="~/img/@item.Image" width="80" alt=""></td>
+                                <td style="width: 180px;">
+                                            <a href="/admin/man/products/edit/@item.Id" class="btn btn-info me-1 float-end">Düzenle</a>
+                                            
+                                            <form asp-controller="Admin" asp-action="DeleteManProducts" method="POST" class="d-flex flex-row">
+                                                <input type="hidden" name="Id" value="@item.Id">
+                                                <button type="submit" class="btn btn-secondary float-end">Sil</button>
+                                            </form>
+                                </td>
+                            </tr>   
+                        }
+                    </tbody>
+                </table>
+        </div>    
+    }
+    else{
+        <div class="row mt-3">
+                    <div class="col-md-3 ms-4">
+                        <div class="alert alert-danger">
+                            <h5><i class="fas fa-exclamation-triangle me-2"></i>Kayıtlı Ürün Bulunmamaktadır.</h5>
+                            <p class="text-decoration-underline">Markaya ait yeni bir ürün eklemeniz gerek.</p>
+                        </div>
+                    </div>
+        </div>
+    }
+</div>

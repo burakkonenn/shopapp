@@ -1,0 +1,63 @@
+@model ModelCategory
+
+
+
+<div class="row border">
+    <div class="col-md-2">
+            <a href="" class="" style="text-decoration: none;"><h2 class="text-center mb-5 mt-3 colr">XX Shop</h2></a>
+            <hr>
+            <ul class="nav flex-column h ">
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="/"><i class="me-2 fas fa-home"></i><span class="ms-2">Home Page</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="RoleList"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="me-1 fas fa-dollar-sign" style="color: skyblue;"></i><span class="ms-3">Orders</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="fas fa-cart-arrow-down" style="color: silver;"></i><span class="ms-3">Sales</span></a>
+                </li>
+                
+                
+            </ul>
+    </div>
+    
+    <div class="col-md-10 header">
+                        <form asp-controller="Admin" asp-action="CreateManCategory" method="POST" class="">
+                                <h2 class="text-center">Yeni Erkek Kategorisi Ekle</h2>
+                                <a asp-controller="Admin" asp-action="Products" class="float-left" style="text-decoration: none;color:black;" ><h2 class="text-center mt-1" style="font-size: 15px;">< Ürünler Sayfasına Geri Dön</h2></a>
+                                <a asp-controller="Admin" asp-action="Panel" class="text-center" style="color: black;text-decoration: none;"></a>
+             				    <div class="mb-3 row">
+                                    <label asp-for="Name" class="col-sm-2 col-form-label"> <h5 style="font-size: 17px;">Kategori Adı</h5> </label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="Name" class="form-control">
+                                        <span asp-validation-for="Name"></span>
+                                    </div>
+                                </div>
+                                 <div class="mb-3 row">
+                                    <label asp-for="GendersId" class="col-sm-2 col-form-label"><h5 style="font-size: 17px;">Tür</h5></label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="GendersId" asp-items="@ViewBag.Genders" class="form-select" id="">
+                                            <option selected>Tür Seçiniz</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label asp-for="Url" class="col-sm-2 col-form-label"><h5 style="font-size: 17px;">Kategori Url Adresi</h5></label>
+                                    <div class="col-sm-10">
+                                        <input asp-for="Url" class="form-control" >
+                                        <span asp-validation-for="Url"></span>
+                                    </div>
+                                </div>
+                             <button class="btn btn-warning" type="submit">Kaydet</button>                                
+                        </form>
+    </div>  
+</div>

@@ -1,0 +1,99 @@
+@model WomanBrandsModel
+@section Css
+{
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+}
+  
+@section Scripts
+{
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+
+}
+
+<div class="row ">
+      <div class="col-md-2">
+            <a href="" class="" style="text-decoration: none;"><h2 class="text-center mb-5 mt-3 colr">XX Shop</h2></a>
+            <hr>
+            <ul class="nav flex-column h ">
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="/"><i class="me-2 fas fa-home"></i><span class="ms-2">Home Page</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="RoleList"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="me-1 fas fa-dollar-sign" style="color: skyblue;"></i><span class="ms-3">Orders</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="fas fa-cart-arrow-down" style="color: silver;"></i><span class="ms-3">Sales</span></a>
+                </li>
+                
+                
+            </ul>
+
+        </div>
+    <div class="col-md-10 ">
+        <div style="height:200px;" class="row header d-flex justify-content-between">
+               <div class="col-md-3 d-flex flex-column">
+                    <a asp-controller="Admin" asp-action="Products"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-angle-double-left"></i>Ürünler Sayfasına Geri Dön</h5>
+               
+                    </a>
+               </div>
+                <div class="col-md-3">
+                    <h2 class="text-center mt-4 mb-2 text">Kadın Marka Listesi</h2>
+                     <a asp-controller="Admin" asp-action="CreateWomanBrands" style="color: black; text-decoration:none;" class="btn btn-warning bxShadow1 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-plus"></i>Yeni Kadın Markası Ekle</h5>
+                    </a>
+                </div>
+                 <div class="col-md-3">
+                     <a asp-controller="Admin" asp-action="Panel"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow2 mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;">Dashboard Sayfasına Geri Dön<i class="ms-2 fas fa-angle-double-right"></i></h5>
+               
+                    </a>        
+                </div>
+           </div>
+        <table class="table table-striped table table-hover table table-bordered " id="myTable">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <td>Id</td>
+                    <td>Marka Adı</td>
+                    <td>Kategori</td>
+                    <td>Tür</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.WomanBrands)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.WomansCategory.Name</td>
+                        <td>@item.Genders.Name</td>
+                        <td style="width: 200px;">
+                                <a href="/admin/woman/brands/products/edit/@item.Id" class="btn btn-info float-end"><i class="far fa-edit me-2"></i>Düzenle</a>
+                                <form asp-controller="Admin" asp-action="DeleteWomanBrands">
+                                    <input type="hidden" name="Id" value="@item.Id">
+                                    <button class="btn btn-secondary float-end me-1"><i class="far fa-trash-alt me-2"></i>Sil</button>
+                                </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

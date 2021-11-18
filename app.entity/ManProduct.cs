@@ -14,10 +14,13 @@ namespace app.entity
         public bool IsHome { get; set; }        
         public List<Comments> Comments { get; set; }
         public List<ManProductBody> ManProductBodies { get; set; }
-        public Persons Persons { get; set; }
+
+        public int MansCategoryId { get; set; }
         public MansCategory MansCategory { get; set; }
+        public int MansBrandsId { get; set; }
         public MansBrands MansBrands { get; set; }
-        
+        public int GendersId { get; set; }
+        public Genders Genders { get; set; }
 
     }
 }

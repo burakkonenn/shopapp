@@ -112,11 +112,122 @@ namespace app.webui
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
-                
-                
-                
-                
+            {   
+                 endpoints.MapControllerRoute(
+                    name:"Usersİnfo",
+                    pattern:"account/manage/{name}",
+                    defaults: new{controller="Account", Action="Manage"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"DeleteWomanBrands",
+                    pattern:"admin/woman/delete/brands/{id?}",
+                    defaults: new{controller="Admin", Action="DeleteWomanBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"DeleteWomanCategory",
+                    pattern:"admin/woman/delete/category/{id?}",
+                    defaults: new{controller="Admin", Action="DeleteWomanCategory"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"DeleteWomanProduct",
+                    pattern:"admin/woman/delete/product/{id?}",
+                    defaults: new{controller="Admin", Action="DeleteWomanProduct"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"DeleteManBrand",
+                    pattern:"admin/man/delete/brands/{id?}",
+                    defaults: new{controller="Admin", Action="DeleteManBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"DeleteManCategory",
+                    pattern:"admin/man/delete/product/{id?}",
+                    defaults: new{controller="Admin", Action="DeleteManCategory"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanProductEdit",
+                    pattern:"admin/woman/product/edit/{id?}",
+                    defaults: new{controller="Admin", Action="WomanProductEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanCategoryEdit",
+                    pattern:"admin/woman/categories/edit/{id?}",
+                    defaults: new{controller="Admin", Action="WomanCategoryEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomansBrandsEdit",
+                    pattern:"admin/woman/brands/products/edit/{id}",
+                    defaults: new{controller="Admin", Action="WomansBrandsEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManBrandsEdit",
+                    pattern:"admin/man/brands/products/edit/{id}",
+                    defaults: new{controller="Admin", Action="MansBrandsEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManCategoryEdit",
+                    pattern:"admin/man/categories/edit/{id?}",
+                    defaults: new{controller="Admin", Action="ManCategoriesEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManProductEdit",
+                    pattern:"admin/man/products/edit/{id?}",
+                    defaults: new{controller="Admin", Action="ManProductsEdit"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"CreateWomanBrands",
+                    pattern:"admin/woman/brands/create",
+                    defaults: new{controller="Admin", Action="CreateWomanBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanCategoryList",
+                    pattern:"admin/woman/category/list",
+                    defaults: new{controller="Admin", Action="WomanCategoryList"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"CreateManBrands",
+                    pattern:"admin/man/brands/create",
+                    defaults: new{controller="Admin", Action="CreateManBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanProductsBrands",
+                    pattern:"admin/woman/products/brands",
+                    defaults: new{controller="Admin", Action="WomanProductsBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"CreateWomanCategory",
+                    pattern:"admin/woman/category/create",
+                    defaults: new{controller="Admin", Action="CreateWomanCategory"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManProductsBrands",
+                    pattern:"admin/man/products/brands",
+                    defaults: new{controller="Admin", Action="ManProductsBrands"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"CreateManCategory",
+                    pattern:"admin/man/category/create",
+                    defaults: new{controller="Admin", Action="CreateManCategory"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManProductsCreate",
+                    pattern:"admin/man/products/create",
+                    defaults: new{controller="Admin", Action="CreateManProduct"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanProductsCreate",
+                    pattern:"admin/woman/products/create",
+                    defaults: new{controller="Admin", Action="CreateWomanProducts"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"WomanProducts",
+                    pattern:"admin/woman/products/list",
+                    defaults: new{controller="Admin", Action="WomanProducts"}
+                );
+                 endpoints.MapControllerRoute(
+                    name:"ManProducts",
+                    pattern:"admin/man/products/list",
+                    defaults: new{controller="Admin", Action="ManProducts"}
+                );
                  endpoints.MapControllerRoute(
                     name:"Comments",
                     pattern:"shop/comment",
@@ -154,34 +265,10 @@ namespace app.webui
                 ); 
                  endpoints.MapControllerRoute(
                     name:"Categorylist",
-                    pattern:"Admin/categories",
-                    defaults: new{controller="Admin", Action="CategoryList"}
+                    pattern:"Admin/man/categories/list",
+                    defaults: new{controller="Admin", Action="ManCategoryList"}
                 ); 
-                 endpoints.MapControllerRoute(
-                    name:"Categoryedit",
-                    pattern:"Admin/categories/{id?}",
-                    defaults: new{controller="Admin", Action="CategoryEdit"}
-                );
-                 endpoints.MapControllerRoute(
-                    name:"Categorycreate",
-                    pattern:"Admin/category/create",
-                    defaults: new{controller="Admin", Action="CategoryCreate"}
-                ); 
-                endpoints.MapControllerRoute(
-                    name:"Createproduct",
-                    pattern:"Admin/products/create",
-                    defaults: new{controller="Admin", Action="CreateProduct"}
-                ); 
-                 endpoints.MapControllerRoute(
-                    name:"Products",
-                    pattern:"Admin/products",
-                    defaults: new{controller="Admin", Action="Products"}
-                ); 
-                 endpoints.MapControllerRoute(
-                    name:"ProductEdit",
-                    pattern:"Admin/products/{id?}",
-                    defaults: new{controller="Admin", Action="ProductEdit"}
-                ); 
+              
                 
                
                 endpoints.MapControllerRoute(

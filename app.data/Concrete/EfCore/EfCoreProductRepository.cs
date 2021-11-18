@@ -22,7 +22,7 @@ namespace app.data.Concrete.EfCore
             using(var context = new ShopContext())
             {
                 return context.ManProducts.Where(p => p.Id == id)
-                                          .Include(i => i.Persons)
+                                        //   .Include(i => i.Gender)
                                           .Include(i => i.MansBrands)
                                           .Include(i => i.Comments)
                                           .Include(p => p.MansCategory).FirstOrDefault();

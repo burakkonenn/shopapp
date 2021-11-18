@@ -16,21 +16,57 @@
     </script>
 
 }
-@await Html.PartialAsync("_header")
-@await Html.PartialAsync("_navbar")
-@await Html.PartialAsync("_headerTwo")
 
 
-<div class="row d-flex justify-content-center createColumn">
-    <div class="col-md-9" style="background-color: white;">
-        <h2 class="mt-4 mb-2 text-center">Roller Listesi</h2>
-            <a asp-controller="Admin" asp-action="CreateRole" style="color: gray;">
-                <h5 class="mt-3" style="font-size: 16px;">Yeni role ekle +</h5>
-            </a>
-            <a asp-controller="Admin" asp-action="Panel" style="color: black;text-decoration: none;">
-                     <h5 class="mt-3" style="font-size: 14px;">< Admin Panel</h5>
-            </a>
+<div class="row">
+     <div class="col-md-2 ">
+            <a href="" class="" style="text-decoration: none;"><h2 class="text-center mb-5 mt-3 colr">XX Shop</h2></a>
             <hr>
+            <ul class="nav flex-column h ">
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="/"><i class="me-2 fas fa-home"></i><span class="ms-2">Home Page</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="RoleList"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="me-1 fas fa-dollar-sign" style="color: skyblue;"></i><span class="ms-3">Orders</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="fas fa-cart-arrow-down" style="color: silver;"></i><span class="ms-3">Sales</span></a>
+                </li>
+                
+                
+            </ul>
+
+        </div>
+    <div class="col-md-10">
+        <div style="height:200px;" class="row header d-flex justify-content-between">
+                <div class="col-md-2 d-flex flex-column">
+                    <a asp-controller="Admin" asp-action="Products"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow0 mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-angle-double-left"></i>Ürünler Sayfasına Geri Dön</h5>
+               
+                    </a>
+               </div>
+                <div class="col-md-3">
+                    <h2 class="text-center mt-4 mb-2 text">Rol Listesi</h2>
+                    <a asp-controller="Admin" asp-action="CreateRole" style="color: black; text-decoration:none;" class="btn btn-warning bxShadow1 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-plus"></i>Yeni Role Ekle</h5>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                     <a asp-controller="Admin" asp-action="Panel"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow2 mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;">Dashboard Sayfasına Geri Dön<i class="ms-2 fas fa-angle-double-right"></i></h5>
+               
+                    </a>        
+                </div>
+           </div>
         <table id="myTable" class="table table-bordered table table-hover table table-sm">
             <thead class="bg-dark text-white">
                 <tr>

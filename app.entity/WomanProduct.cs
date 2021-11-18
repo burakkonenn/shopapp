@@ -16,9 +16,14 @@ namespace app.entity
         public bool IsApproved { get; set; }
         public bool IsHome { get; set; }        
         public List<Comments> Comments { get; set; }
-        public Womans Womans { get; set; }
+      
+        public int WomansCategoryId { get; set; }
         public WomansCategory WomansCategory { get; set; }
-        public WomansBrands WomansBrandId { get; set; }
+        public int WomansBrandsId { get; set; }
+        public WomansBrands WomansBrand { get; set; }
         public List<WomanProductBody> WomanProductBodies { get; set; }
+         public int GendersId { get; set; }
+        public Genders Genders { get; set; }
+    
     }
 }

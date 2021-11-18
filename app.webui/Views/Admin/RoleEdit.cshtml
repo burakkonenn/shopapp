@@ -17,17 +17,27 @@
 
 }
 
-
-<h1 class="h3">Edit Role</h1>
-<hr>
-<div class="row">
+<div class="row header">
+    <div class="">
+                <div class="col-md-2 divs">
+                   <a asp-controller="Admin" asp-action="Products"  style="color: black;text-decoration: none;" class="btn btn-light bxShadow mb-3 border-0">
+                        <h5 class="mt-2" style="font-size: 13px;"><i class="me-2 fas fa-angle-double-left"></i>Ürünler Sayfasına Geri Dön</h5>
+                    </a>
+               </div>
+                <div class="d-flex justify-content-center">
+                   <h2 class="text-center">Rol Düzenleme Sayfası</h2>
+                </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    
     <div class="col-md-12">
 
         <form asp-controller="Admin" asp-action="RoleEdit">
             <input type="hidden" name="RoleId" value="@Model.Role.Id">
             <input type="hidden" name="RoleName" value="@Model.Role.Name">
-            <h6 class="bg-info text-white p-1">Add to @Model.Role.Name</h6>
-            <table class="table table-bordered table-sm" id="myTable">
+            <h6 class="bg-dark text-white p-1">@Model.Role.Name rolüne ekle</h6>
+            <table class="table table-bordered table table-hover table table-striped" id="myTable">
                 @if(Model.NonMembers.Count()==0)
                 {
                     <tr>
@@ -38,7 +48,7 @@
                     {
                         <tr>
                             <td>@user.UserName</td>
-                           <td style="width: 150px;">
+                            <td style="width: 150px;">
                                 <input type="checkbox" name="IdsToAdd" value="@user.Id">
                             </td>
                         </tr>
@@ -48,7 +58,7 @@
 
             <hr>
 
-            <h6 class="bg-info text-white p-1">Remove from @Model.Role.Name</h6>
+            <h6 class="bg-dark text-white p-1">@Model.Role.Name rolünden çıkar</h6>
             <table class="table table-bordered table-sm">
                 @if(Model.Members.Count()==0)
                 {
@@ -68,7 +78,7 @@
                 }
             </table>
 
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="submit" class="btn btn-warning">Save Changes</button>
 
         </form>
 

@@ -1,21 +1,46 @@
 @model RoleModel
 
-@await Html.PartialAsync("_header")
-@await Html.PartialAsync("_navbar")
-@await Html.PartialAsync("_headerTwo")
 
 
-<div class="row d-flex justify-content-center createColumn">
-    <div class="col-md-6"  style="background-color: white;">
-        <h2 class="text-center mt-1">Yeni Rol Ekle</h2>
-        <a asp-controller="Admin" asp-action="RoleList" class="float-left" style="text-decoration: none;color:black;" ><h2 class="text-center mt-1" style="font-size: 15px;">< Roller Sayfasına Geri Dön</h2></a>
-        <form asp-controller="Admin" asp-action="RoleList" method="POST">
+<div class="row">
+    <div class="col-md-2">
+            <a href="" class="" style="text-decoration: none;"><h2 class="text-center mb-5 mt-3 colr">XX Shop</h2></a>
+            <hr>
+            <ul class="nav flex-column h ">
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="/"><i class="me-2 fas fa-home"></i><span class="ms-2">Home Page</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="Products"><i class="me-2 fas fa-shopping-cart" style="color: salmon;"></i><span class="ms-2">Products</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="RoleList"><i class="me-2 fas fa-user-plus" style="color: pink;"></i><span class="ms-1">Roles</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" asp-controller="Admin" asp-action="UserList"><i class="me-2 fas fa-users" style="color: thistle;"></i><span class="ms-1">Users</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="me-1 fas fa-dollar-sign" style="color: skyblue;"></i><span class="ms-3">Orders</span></a>
+                </li>
+                <li class="nav-item itemli mb-2">
+                    <a class="nav-link item" href="#"><i class="fas fa-cart-arrow-down" style="color: silver;"></i><span class="ms-3">Sales</span></a>
+                </li>
+                
+                
+            </ul>
+
+    </div>
+    <div class="col-md-10 header d-flex justify-content-center">
+        
+        <form asp-controller="Admin" asp-action="CreateRole" method="POST" class="forms">
+            <h2 class="text-center mt-1">Yeni Rol Ekle</h2>
+            <a asp-controller="Admin" asp-action="RoleList" class="float-left" style="text-decoration: none;color:black;" ><h2 class="text-center mt-1" style="font-size: 15px;">< Roller Sayfasına Geri Dön</h2></a>
             <div class="form-group">
                 <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control">
                 <span asp-validation-for="Name"></span>
             </div>
-            <button class="btn btn-outline-primary mt-2" type="submit">Save Changes</button>
+            <button class="btn btn-warning mt-2" type="submit">Save Changes</button>
         </form>
-    </div>
+    </div> 
 </div>

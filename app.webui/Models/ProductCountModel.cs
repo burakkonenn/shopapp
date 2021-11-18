@@ -12,6 +12,8 @@ namespace app.webui.Models
         public int UserCount { get; set; }
         public int OrdersCount { get; set; }
         
+        public int CommentCount { get; set; }
+        
         
         
     }
