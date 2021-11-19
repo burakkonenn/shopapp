@@ -3,54 +3,123 @@
 @await Html.PartialAsync("_header")
 @await Html.PartialAsync("_navbar")
 @await Html.PartialAsync("_headerTwo")
-<div class="row mb-5 d-flex justify-content-center">
-                <div class="col-md-5 border detailsShadow" style="height:650px;">
-                    <img src="~/img/@Model.Product.Image" style="height:650px; width:100%" alt="">
+
+
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-md-10">
+        <div class="card detailsShadow">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="~/img/@Model.Product.Image" class="card-img-top" alt="">
                 </div>
-                <div class="col-md-6 border detailsShadow">
-                        @* <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.Persons.Name ></a></span>  *@
-                        <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.MansCategory.Name ></a></span> 
-                        <span style="font-size: 20px;" class="card-text ms-1"><a href="" style="color: gray;">@Model.Product.MansBrands.Name > </a></span> 
-                        <p><a href="" style="color:gray;">@Model.totalCommentCount Soru & Cevap</a></p>
-                        <h2 class="card-title mt-4 mb-2">@Model.Product.Name</h2>
-                        <hr>
-                        <h3 class="card-title">@Model.Product.Price TL</h3>
-                        <hr>
-                        <div class="d-grid gap-2">
-                            <button class="btn btn-warning" type="submit">Sepete Ekle</button>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <div class="d-flex flex-row mt-3">
+                            <h2 style="font-size: 16px;color:black;" class="me-2">@Model.Product.MansCategory.Name ></h2>
+                            <h2 style="font-size: 16px;color:black;">@Model.Product.MansBrands.Name </h2>
                         </div>
-                        <p class="text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente incidunt mollitia vero commodi, harum, repellendus similique ex corrupti consequuntur quos unde maxime sed magni nam. Suscipit ab nihil qui harum.
+                        <h2  style="font-size: 16px;color:black;" class="text-decoration-underline mt-1">@Model.totalCommentCount Soru & Cevap</h2>
+                        <h2 class="card-title mt-4 mb-2">@Model.Product.Name</h2>
+                        <h3 class="card-title mb-5">@Model.Product.Price TL</h3>
+                        <form asp-controller="Cart" asp-action="AddToCart" method="POST" class="form-inline">
+                            <div class="d-flex flex-row" style="height: 40px;">
+                                        <input type="hidden" name="ManProductId" value="@Model.Product.Id">
+                                        <input type="number" name="quantity" class="form-control quantityClass" value="1" min="1" step="1">
+                                        <button type="submit" class="btn btn-warning btnDetail">
+                                            <i class="fas fa-cart-plus me-3"></i>Sepetime Ekle             
+                                        </button>
+                            </div>
+                                  
+                        </form>
+                        <h2 style="font-size: 15px;" class="text mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente incidunt mollitia vero commodi, harum, repellendus similique ex corrupti consequuntur quos unde maxime sed magni nam. Suscipit ab nihil qui harum.
                         A reprehenderit omnis deserunt inventore earum. Tenetur itaque voluptas alias modi perspiciatis numquam consequuntur officia neque illum fugiat consectetur molestiae incidunt iste, cupiditate perferendis, ab molestias dolor saepe minus? Quisquam?
                         Sed magnam quia reprehenderit ad voluptatem odit ut quae amet similique, enim accusantium libero dolore commodi nostrum iure aliquid dolor unde ipsa. Molestias excepturi facere saepe quod, cupiditate ipsum blanditiis.
                         Nam dolorum pariatur libero est. Doloribus nemo, optio aut commodi eveniet maiores illum placeat a asperiores quae mollitia blanditiis ea dolorum aspernatur. Harum tenetur eius quo quasi ipsam, repudiandae quas.
-                        A delectus nulla, animi at officiis ipsam, exercitationem et assumenda blanditiis neque doloremque ducimus velit fuga? Quis, incidunt, reprehenderit nemo aliquam omnis quasi ullam illo at quod facere obcaecati porro!</p>
-                </div>    
-</div>
-
-
-<div class="row mt-3 mb-5 d-flex justify-content-center">
-    <div class="col-md-11">
-        <h2 class="mb-4">Ürün Değerlendirmesi</h2>
-        <form action="/shop/comment" method="post" class="border p-4 formStyle">
-            <input type="hidden" name="ProductId" class="form-control" value="@Model.Product.Id">
-            <input type="hidden" name="Date" class="form-control" value="@DateTime.Now">
-            <div class="mb-4">
-                <input type="text" class="form-control mb-2" placeholder="Adınız" name="Name">
+                        A delectus nulla, animi at officiis ipsam, exercitationem et assumenda blanditiis neque doloremque ducimus velit fuga? Quis, incidunt, reprehenderit nemo aliquam omnis quasi ullam illo at quod facere obcaecati porro!</h2>
+                    </div>
+                </div>
             </div>
-             <div class="mb-4">
-                <input type="email" class="form-control mb-2" placeholder="Email Adresiniz" name="Email">
-            </div>
-            <div class="mb-3">
-                <textarea name="Post" id="" placeholder="Yorumunuz" class="form-control" cols="30" rows="10"></textarea>
-            </div>
-            <button class="btn btn-warning mt-3" type="submit">Gönder</button>
-        </form>
-
+        </div>
     </div>
 </div>
 
-<div class="row d-flex justify-content-center">
-    <div class="col-md-11">
+<div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-10">
+        <h2 class="mb-4 text-center">Ürün Değerlendirmesi</h2>
+        <form asp-controller="Shop" asp-action="Comment" method="post" class="border p-4">
+            <input type="hidden" name="ProductId" class="form-control" value="@Model.Product.Id">
+            <input type="hidden" name="Date" class="form-control" value="@DateTime.Now">
+            <div class="mb-4">
+                <input type="text" id="inp" class="form-control mb-2 detailİnput" placeholder="Adınız" name="Name">
+            </div>
+             <div class="mb-4">
+                <input type="email" id="inp" class="form-control mb-2 detailİnput" placeholder="Email Adresiniz" name="Email">
+            </div>
+            <div class="mb-3">
+                <textarea name="Post" id="inp" placeholder="Yorumunuz" class="form-control detailİnput" cols="30" rows="10"></textarea>
+            </div>
+            <button id="btn" class="btn btn-warning mt-3" type="submit">Gönder</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+        $("#btn").click(function () {
+            alert(tbad.value);
+            $("#btnGondert").attr("disabled", "true");
+             
+            var theContact = {
+                ad: inp.value,
+                soyad: inp.value,
+            };
+ 
+            var theData = JSON.stringify(theContact);
+            $.ajax({
+                type: "POST",
+                url: "/shop/comment",
+                contentType: "application/json; charset=utf-8",
+                 
+                data: theData,
+                dataType: "json",
+                success: function (data) {
+                    $("#btn").removeAttr("disabled");
+                    alert("işlem tamam asdklfj")
+ 
+                },
+                error: function (data) {
+                    $("#btn").removeAttr("disabled");
+                }
+ 
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ajax">
+
+</div>
+<div class="row d-flex justify-content-center mt-3">
+    <div class="col-md-10 formStyle">
         <div class="d-flex justify-content-center mt-2 mb-2">
             <h2 class="text-muted">@Model.totalCommentCount Yorum</h2>
         </div>

@@ -4,48 +4,43 @@
 @await Html.PartialAsync("_header")
 @await Html.PartialAsync("_navbar")
 @await Html.PartialAsync("_headerTwo")
-<div class="row mb-5 d-flex justify-content-center border regBackground">
-    <div class="col-md-3 mt-4 d-flex justify-content-center border registerBack p-3">
-        <form asp-controller="Account" asp-action="Register">
-            <div class="d-grid gap-2 mt-3">
-                <a href="" class="btn btn-primary">Hızlı Giriş Yap</a>
-                <a href="" class="btn btn-primary regBtn"><i class="fab fa-facebook me-2"
-                style="font-size: 25px;"
-                ></i>Facebook İle Üye Ol</a>
-            </div>
-            <p class="mt-3 mb-4 text-center">veya</p>
-            <h4 class="mb-3" style="font-size: 17px;">E-Posta ile Üye Ol</h4>
-            <hr>
-            <div class="form-group mb-4" style="width: 250px;">
-                <input asp-for="Adı" placeholder="Adı" class="Regİnp form-control">
+<div class="row  p-4 mb-4 d-flex justify-content-center border regBackground">
+    <div class="col-md-3 mt-4 d-flex justify-content-center border"style="background-color: white;">
+        <form asp-controller="Account" asp-action="Register" class="LoginForms">
+            <h4 class="mb-5 text-center mt-5" style="font-size:20px; color:black;">E-Posta ile Üye Ol</h4>
+            <div class="form-group mb-4  d-flex justify-content-center">
+                <input asp-for="Adı" placeholder="Adı" class="Loginİnput form-control">
                 <span asp-validation-for="Adı"></span>
             </div>
-            <div class="form-group mb-4"  style="width: 250px;">
-                <input asp-for="Soyadı" placeholder="Soyadı" class="Regİnp form-control">
+            <div class="form-group mb-4  d-flex justify-content-center" >
+                <input asp-for="Soyadı" placeholder="Soyadı" class="Loginİnput form-control">
                 <span asp-validation-for="Soyadı"></span>
             </div>
-             <div class="form-group mb-4"  style="width: 250px;">
-                <input asp-for="KullanıcıAdı" placeholder="Kullanıcı Adı" class="Regİnp form-control">
+             <div class="form-group mb-4  d-flex justify-content-center">
+                <input asp-for="KullanıcıAdı" placeholder="Kullanıcı Adı" class="Loginİnput form-control">
                 <span asp-validation-for="KullanıcıAdı"></span>
             </div>
-             <div class="form-group mb-4" style="width: 250px;">
-                <input asp-for="Eposta" placeholder="E-posta" class="Regİnp form-control">
+             <div class="form-group mb-4  d-flex justify-content-center">
+                <input asp-for="Eposta" placeholder="E-posta" class="Loginİnput form-control">
                 <span asp-validation-for="Eposta"></span>
             </div>
-              <div class="form-group mb-4" style="width: 250px;">
-                <input asp-for="Sifre" placeholder="Şifre" class="Regİnp form-control">
+              <div class="form-group mb-4  d-flex justify-content-center">
+                <input asp-for="Sifre" placeholder="Şifre" class="Loginİnput form-control">
                 <span asp-validation-for="Sifre"></span>
             </div>
-            <div class="form-group mb-4" style="width: 250px;">
-                <input asp-for="SifreTekrarı" placeholder="Şifre(Tekrar)" class="Regİnp form-control">
+            <div class="form-group mb-4  d-flex justify-content-center">
+                <input asp-for="SifreTekrarı" placeholder="Şifre(Tekrar)" class="Loginİnput form-control">
                 <span asp-validation-for="SifreTekrarı"></span>
             </div>
-            <div class="mt-2 d-grid gap-2">
-                <button class="btn btn-warning mt-2" type="submit">Üye Ol</button>
+            <div class="mb-3 d-grid gap-2">
+                        <button type="submit" class="btn btn-warning loginBtn border-0 mt-5"><h2 class="mt-1" style="font-size: 15px;">ÜYE OL</h2></button>
             </div>
-            <div class="mt-5 d-flex flex-row">
-                 <p class="me-2">Zaten Üye misiniz?</p>   
-                 <a href="">Giriş Yap</a>
+            <div class="d-flex justify-content-center">
+                    <h2 style="font-size: 17px;color:gray;">Ya da</h2>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                 <h2 style="font-size: 15px;color:gray;" class="me-2">Zaten Üye misiniz?</h2>   
+                 <a style="text-decoration: none; color:gray;" href="/account/login"><h2 style="font-size: 15px;" class="text-decoration-underline">Giriş Yap</h2></a>
             </div>
         </form>
     </div>

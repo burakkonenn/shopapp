@@ -4,7 +4,7 @@ namespace app.data.Abstract
 {
     public interface ICartRepository: IRepository<Cart>
     {
-        Cart GetCartById(string userId);
-        
+        Cart GetCartByUserId(string userId);
+        void DeleteFromCart(int cartId, int manProductId);
     }
 }

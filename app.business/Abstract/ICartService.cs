@@ -4,8 +4,11 @@ namespace app.business.Abstract
 {
     public interface ICartService
     {
-        void InitializeCart(string userId);
-        Cart GetCartById(string userId);
-        void AddToCart(int productId, int quantity,string userId);
+        void InitiliazeCart(string userId);   
+
+        Cart GetCartByUserId(string userId);
+        void AddToCart(string userId, int manProductId, int quantity);
+        void DeleteFromCart(string userId, int manProductId);
+        
     }
 }

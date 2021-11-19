@@ -65,16 +65,11 @@ namespace app.data.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("WomanProductId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CartId");
 
                     b.HasIndex("ManProductId");
-
-                    b.HasIndex("WomanProductId");
 
                     b.ToTable("CartItems");
                 });
@@ -320,7 +315,7 @@ namespace app.data.Migrations
                     b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("WomansCategoryId")
+                    b.Property<int>("WomansCategoryId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -368,17 +363,9 @@ namespace app.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("app.entity.WomanProduct", "WomanProduct")
-                        .WithMany()
-                        .HasForeignKey("WomanProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Cart");
 
                     b.Navigation("ManProduct");
-
-                    b.Navigation("WomanProduct");
                 });
 
             modelBuilder.Entity("app.entity.Comments", b =>
@@ -528,7 +515,9 @@ namespace app.data.Migrations
 
                     b.HasOne("app.entity.WomansCategory", "WomansCategory")
                         .WithMany("WomansBrands")
-                        .HasForeignKey("WomansCategoryId");
+                        .HasForeignKey("WomansCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Genders");
 

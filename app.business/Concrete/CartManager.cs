@@ -12,39 +12,49 @@ namespace app.business.Concrete
             this._cartRepository = cartRepository;
         }
 
-        public void AddToCart(int productId, int quantity,string userId)
+        public void AddToCart(string userId, int manProductId, int quantity)
         {
-            var cart = GetCartById(userId);
+            var cart = GetCartByUserId(userId);
             if(cart != null)
             {
-                var index = cart.CartItems.FindIndex(i => i.ManProductId==productId);
-                if(index<0)
+                var Index = cart.CartItems.FindIndex(i => i.ManProductId == manProductId);
+                if(Index<0)
                 {
                     cart.CartItems.Add(new CartItem(){
-                        CartId = cart.Id,
-                        ManProductId = productId,
-                        Quantity = quantity,
-
+                       CartId = cart.Id,
+                       ManProductId = manProductId,
+                       Quantity = quantity,
+                 
+                       
                     });
-
-                    
                 }
-                else
-                {
-                    cart.CartItems[index].Quantity += quantity;
+                else{
+                    cart.CartItems[Index].Quantity += quantity;
                 }
                  _cartRepository.Update(cart);
             }
+           
         }
 
-        public Cart GetCartById(string userId)
+        public void DeleteFromCart(string userId, int manProductId)
         {
-            return _cartRepository.GetCartById(userId);
+            var cart = GetCartByUserId(userId);
+            if(cart != null)
+            {
+                _cartRepository.DeleteFromCart(cart.Id, manProductId);
+            }
         }
 
-        public void InitializeCart(string userId)
+        public Cart GetCartByUserId(string userId)
+        {
+            return _cartRepository.GetCartByUserId(userId);
+        }
+
+        public void InitiliazeCart(string userId)
         {
             _cartRepository.Create(new Cart(){UserId = userId});
         }
+
+       
     }
 }

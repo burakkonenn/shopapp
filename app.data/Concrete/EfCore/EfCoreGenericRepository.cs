@@ -44,11 +44,11 @@ namespace app.data.Concrete.EfCore
             }
         }
 
-        public virtual void Update(Tentity entity)
+        public virtual void Update(Tentity Entity)
         {
             using (var context = new Tcontext())
             {
-                context.Entry(entity).State = EntityState.Modified;
+                context.Entry(Entity).State = EntityState.Modified;
                 context.SaveChanges();
             }
         }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace app.data.Migrations
 {
-    public partial class FirstMigrations : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -127,7 +127,7 @@ namespace app.data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Url = table.Column<string>(type: "TEXT", nullable: true),
-                    WomansCategoryId = table.Column<int>(type: "INTEGER", nullable: true),
+                    WomansCategoryId = table.Column<int>(type: "INTEGER", nullable: false),
                     GendersId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -144,7 +144,7 @@ namespace app.data.Migrations
                         column: x => x.WomansCategoryId,
                         principalTable: "WomansCategories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -228,6 +228,33 @@ namespace app.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CartItems",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    CartId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ManProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Quantity = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CartItems_Carts_CartId",
+                        column: x => x.CartId,
+                        principalTable: "Carts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CartItems_ManProducts_ManProductId",
+                        column: x => x.ManProductId,
+                        principalTable: "ManProducts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ManProductBodies",
                 columns: table => new
                 {
@@ -247,40 +274,6 @@ namespace app.data.Migrations
                         name: "FK_ManProductBodies_ManProducts_ManProductId",
                         column: x => x.ManProductId,
                         principalTable: "ManProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CartItems",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    CartId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ManProductId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Quantity = table.Column<int>(type: "INTEGER", nullable: false),
-                    WomanProductId = table.Column<int>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CartItems", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CartItems_Carts_CartId",
-                        column: x => x.CartId,
-                        principalTable: "Carts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CartItems_ManProducts_ManProductId",
-                        column: x => x.ManProductId,
-                        principalTable: "ManProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CartItems_WomanProducts_WomanProductId",
-                        column: x => x.WomanProductId,
-                        principalTable: "WomanProducts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -349,11 +342,6 @@ namespace app.data.Migrations
                 name: "IX_CartItems_ManProductId",
                 table: "CartItems",
                 column: "ManProductId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CartItems_WomanProductId",
-                table: "CartItems",
-                column: "WomanProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comment_ProductId",

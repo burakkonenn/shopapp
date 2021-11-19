@@ -8,7 +8,7 @@ namespace app.data.Concrete.EfCore
 {
     public class EfCoreCategoryRepository : EfCoreGenericRepository<MansCategory, ShopContext>, ICategoryRepository
     {
-        public void DeleteFromCategory(int productId, int categoryId)
+               public void DeleteFromCategory(int productId, int categoryId)
         {
             using(var context = new ShopContext())
             {
@@ -16,6 +16,7 @@ namespace app.data.Concrete.EfCore
                 context.Database.ExecuteSqlRaw(cmd,productId,categoryId);
             }            
         }
+
 
         public List<MansCategory> GetCategoryByOrder()
         {

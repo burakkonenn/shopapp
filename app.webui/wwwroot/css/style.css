@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(249, 249, 249);
 }
 
 .h{
@@ -36,6 +37,7 @@ body{
     color: gray;
     transition: 1s;
 
+
 }
 .s{
     font-family: 'Space Grotesk', sans-serif;
@@ -66,7 +68,7 @@ body{
     text-decoration: none;
 }
 #inp{
-    background-color: #ebedf0;
+    
     border: none;
 }
 .c{
@@ -86,22 +88,30 @@ body{
 #formin{
     background-color: #ebedf0;
 }
-#inp:focus{
-    
-    box-shadow: 1px 1px 4px 2px whitesmoke;
-    border: 2px solid orange;
+.homeSearch::placeholder{
+    font-size: 11px;
 }
 .n{
     font-size: 15px;
-    font-family: 'Space Grotesk', sans-serif;
+    margin: 7px;
+}
+.flexCol{
+   padding: 5px;
+}
+.navFont{
+    font-size: 14px;
+    color:gainsboro;
 }
 .details
 {
     box-shadow: 10px 10px 100px rgb(206, 199, 199);
 }
 .formStyle{
-    background-color: white;
-    box-shadow: 10px 20px 20px rgb(220, 215, 215);
+    box-shadow: 1px 1px 10px rgb(222, 217, 217);
+    
+}
+.detailİnput::placeholder{
+    font-size: 13px;
 }
 .like{
     color: gray;
@@ -123,12 +133,15 @@ body{
     box-shadow: 1px 3px 1px rgb(206, 196, 196);
 }
 .detailsShadow{
-    box-shadow: 1px 3px 20px rgb(206, 196, 196);
+    box-shadow: 1px 1px 10px rgb(222, 217, 217);
 
 }
 .registerBack{
     background-color: rgb(254, 254, 254);
-    width: 350px;
+    
+}
+.RegisterForm{
+    width: 300px;
 }
 .logincolumn{
     width: 400px;
@@ -140,14 +153,25 @@ body{
 .forms{
     width: 250px;
 }
-.loginİnput{
-    background-color: rgb(249, 247, 247);
+
+.Loginİnput::placeholder{
+    font-size: 12px;
+}
+.LoginForms{
+    width: 330px;
+    
 }
 .post{
     position: relative;
     right: 5px;
 
 }
+.forgotPassword{
+    font-size: 14px;
+    font-weight: 500;
+    color: gray;
+}
+
 .Regİnp::placeholder{
     font-size: 10px;
 }
@@ -155,25 +179,25 @@ body{
 .regBtn{
     background-color: rgb(15, 15, 206);
 }
-.regBackground{
-    background-color: rgb(233, 233, 240);
+.forgotBorder{
+    border: 1px solid gainsboro;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px gainsboro;
+}
 
-}
-.loginback{
-    background-color: rgb(233, 233, 240);
-}
 ::-webkit-scrollbar {
     display: none;
     visibility: hidden;
     opacity: 0
 }
 .adminPanelColumn{
-    background-color: rgb(135, 104, 135);
+    background-color: rgb(92, 77, 83);
     height: 440px;
  
 }
 .header{
-    background-color: rgb(135, 104, 135);
+    background-color: rgb(92, 77, 83);
     color:white;
     padding: 50px;
 }
@@ -183,6 +207,7 @@ body{
 .createColumn{
     background-color: rgb(249, 247, 247);
 }
+
 .createProductsPage{
     background-color: white
 }
@@ -231,6 +256,10 @@ body{
     left: 22px;
     bottom: 1px;
 }
+.homeSearch:focus{
+    box-shadow: none;
+}
+
 .columnRound{
     border-radius: 10px;
     cursor: pointer;
@@ -300,6 +329,28 @@ body{
     width: 230px;
     position: relative;
     
+}
+
+.bxShad{
+    border-radius: 20px;
+    width: 260px;
+    bottom: 45px;
+    right: 50px;
+    position: relative;
+}
+.bxSh0{
+    border-radius: 20px;
+    width: 260px;
+    bottom: 45px;
+    right: 265px;
+    position: relative;
+}
+.bxSh{
+    border-radius: 20px;
+    width: 230px;
+    position: relative;
+    bottom: 40px;
+    right: 45px;
 }
 .bxShado{
     position: relative;
@@ -385,6 +436,11 @@ body{
     position: relative;
     top: 25px;
 }
+.detailsCat{
+    font-size: 17px;
+    margin: 7px;
+    font-weight: 400;
+}
 .divs{
     position: relative;
     bottom: 43px;
@@ -397,4 +453,24 @@ body{
 .btnUser{
     border-radius: 100px;
     width: 200px;
+}
+.backGroundHeader{
+    background-color: rgb(92, 77, 83);
+}
+.loginBtn{
+    background: linear-gradient(to right,rgb(86, 194, 223),rgb(255, 1, 255));
+    color: white;
+    border-radius: 100px;
+    height: 50px;
+}
+.quantityClass{
+    width: 100px;
+
+}
+.text{
+    text-align:justify
+}
+.btnDetail{
+    width: 200px;
+   
 }

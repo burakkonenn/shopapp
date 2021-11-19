@@ -1,29 +1,29 @@
-<div class="container-fluid">
-    <div class="row d-flex justify-content-center d-flex align-items-center ">
-        <div class="col-md-3  d-flex justify-content-end">
-            <a href="/" class="nav-link n"><h2 class="mt-2 " style="color: black; fontsize:20px;">XXX SHOP</h2></a>
+<div class="container-fluid backGroundHeader">
+    <div class="row d-flex justify-content-center d-flex align-items-center">
+        <div class="col-md-3  d-flex justify-content-end flexCol">
+            <a href="/" class="nav-link n"><h2 class="mt-2 " style="color: gainsboro; fontsize:20px;">XXX SHOP</h2></a>
         </div>
         <div class="col-md-4 ">
-                <form action="">
-                   <div class="input-group ms-4 gr" id="">
-                       <input id="inp" type="text" class="form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız.">
-                        <span id="sp" class="input-group-text border-0"><i class="fas fa-search" style="color: orange;"></i></span>
-                   </div>
+                <form action="" class="">
+                   <div class="input-group">
+                        <span class="input-group-text border-0" style="background-color: white;"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control border-0 homeSearch" placeholder="Anahtar bir kelime giriniz..">
+                    </div>
                 </form>
         </div>
         <div class="col-md-4 d-flex justify-content-start ">
 
                 @if(User.Identity.IsAuthenticated)
                 {
-                    <a asp-controller="account"asp-action="Manage" asp-route-Name="@User.Identity.Name" class="nav-link fontSize ms-3"><i class="far fa-user me-2 "></i>@User.Identity.Name</a> 
-                    <a asp-controller="account" asp-action="Logout" class="nav-link fontSize">Çıkış Yap</a>
-                    <a asp-controller="Cart" asp-action="Index" class="nav-link fontSize"><i class="fas fa-shopping-cart me-2 "></i>Sepetim</a>
-                    <a href="" class="nav-link fontSize"><i class="far fa-heart me-2 "></i>Favorilerim</a>
+                    <a asp-controller="account"asp-action="Manage" asp-route-Name="@User.Identity.Name" class="nav-link fontSize ms-3" style="color: gainsboro;"><i class="far fa-user me-2 "></i>@User.Identity.Name</a> 
+                    <a asp-controller="account" asp-action="Logout" class="nav-link fontSize" style="color: gainsboro;">Çıkış Yap</a>
+                    <a asp-controller="Cart" asp-action="Index" class="nav-link fontSize" style="color: gainsboro;"><i class="fas fa-shopping-cart me-2 "></i>Sepetim</a>
+                    <a href="" class="nav-link fontSize" style="color: gainsboro;"><i class="far fa-heart me-2 "></i>Favorilerim</a>
                 }
                 else
                 {    
-                    <a asp-controller="account"asp-action="Login" class="nav-link fontSize ms-3"><i class="far fa-user me-2 "></i>Giriş Yap</a>
-                    <a asp-controller="account" asp-action="Register" class="nav-link fontSize ms-2"><i class="far fa-user me-2 "></i>Üye Ol</a>
+                    <a asp-controller="account"asp-action="Login" class="nav-link fontSize ms-3" style="color: gainsboro;"><i class="far fa-user me-2 "></i>Giriş Yap</a>
+                    <a asp-controller="account" asp-action="Register" class="nav-link fontSize ms-2" style="color: gainsboro;"><i class="far fa-user me-2 "></i>Üye Ol</a>
 
                 }    
                     

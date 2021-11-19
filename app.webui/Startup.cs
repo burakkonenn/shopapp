@@ -228,14 +228,10 @@ namespace app.webui
                     pattern:"admin/man/products/list",
                     defaults: new{controller="Admin", Action="ManProducts"}
                 );
+                
                  endpoints.MapControllerRoute(
-                    name:"Comments",
-                    pattern:"shop/comment",
-                    defaults: new{controller="Shop", Action="Comment"}
-                );
-                 endpoints.MapControllerRoute(
-                    name:"Cart",
-                    pattern:"cart/ındex",
+                    name:"Carts",
+                    pattern:"Cart/Index",
                     defaults: new{controller="Cart", Action="Index"}
                 );
                  endpoints.MapControllerRoute(
@@ -304,7 +300,7 @@ namespace app.webui
                 );
                 endpoints.MapControllerRoute(
                     name:"productdetails",
-                    pattern:"products/{url}/{id?}",
+                    pattern:"products/{id?}",
                     defaults: new{controller="Shop", Action="Details"}
                 ); 
                 endpoints.MapControllerRoute(

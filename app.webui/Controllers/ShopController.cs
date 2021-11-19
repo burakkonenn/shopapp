@@ -23,7 +23,14 @@ namespace app.webui.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var context = new ShopContext();
+            var model = new ProductModel()
+            {
+                Products = _productService.GetAll()
+            };
+           
+            return View(model);
+        
         }
 
         public IActionResult Man()
@@ -79,8 +86,7 @@ namespace app.webui.Controllers
             {
                 return NotFound();
             }
-            var product = _productService.GetProduct((int)id);
-            
+            var product = _productService.GetProduct((int)id);          
             if (product == null)
             {
                 return NotFound();
@@ -97,12 +103,7 @@ namespace app.webui.Controllers
             return View(model);
         }
 
-        public IActionResult Comment()
-        {
 
-            return View();
-        }
-        
         [HttpPost]
         public IActionResult Comment(Comments model)
         {

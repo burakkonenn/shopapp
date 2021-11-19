@@ -8,6 +8,8 @@ namespace app.data.Concrete.EfCore
 {
     public class EfCoreProductRepository : EfCoreGenericRepository<ManProduct, ShopContext>, IProductRepository
     {
+       
+
         public int GetBrandTotalCount()
         {
             using( var context = new ShopContext())
@@ -71,6 +73,5 @@ namespace app.data.Concrete.EfCore
             }
         }
 
-      
     }
 }

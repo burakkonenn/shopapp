@@ -133,7 +133,7 @@ namespace app.webui.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user,token);
                 if(result.Succeeded)
                 {
-                    _cartService.InitializeCart(user.Id);
+                   _cartService.InitiliazeCart(user.Id);
                    CreateMessage("Hesap onaylandı","success");
                    
                     return View();

@@ -7,13 +7,22 @@ namespace app.data.Concrete.EfCore
 {
     public class EfCoreCartRepository : EfCoreGenericRepository<Cart, ShopContext>, ICartRepository
     {
-        public Cart GetCartById(string userId)
+        public void DeleteFromCart(int cartId, int manProductId)
         {
             using(var context = new ShopContext())
             {
-                return context.Carts.Include(c => c.CartItems)     
-                                    .ThenInclude(p => p.ManProduct)
-                                    .FirstOrDefault(u => u.UserId == userId);
+                var cmd = @"delete from cartItems where CartId=@p0 and ManProductId=@p1";
+                context.Database.ExecuteSqlRaw(cmd,cartId,manProductId);
+            }
+        }
+
+        public Cart GetCartByUserId(string userId)
+        {
+            using(var context = new ShopContext())
+            {
+                return context.Carts.Include(i => i.CartItems)
+                                    .ThenInclude(i => i.ManProduct)
+                                    .FirstOrDefault(i => i.UserId == userId);
             }
         }
         public override void Update(Cart entity)
@@ -24,5 +33,6 @@ namespace app.data.Concrete.EfCore
                context.SaveChanges();
             }
         } 
+      
     }
 }
